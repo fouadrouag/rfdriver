@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Taxi RF — Taxi & VTC dans l'Oise. Transferts vers Paris, CDG, Orly, Beauvais et toutes gares parisiennes depuis Compiègne, Noyon, Pierrefonds. Disponible 24h/24 — 7j/7." />
+  <meta name="keywords" content="taxi Compiègne, taxi Noyon, VTC Oise, transfert aéroport CDG, taxi Pierrefonds, chauffeur privé Oise, taxi Lacroix-Saint-Ouen, VTC Île-de-France" />
+  <title>Taxi & VTC Compiègne, Noyon, Pierrefonds — Taxi RF Oise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --gold: #C9A84C; --gold-light: #E2C97E; --black: #0A0A0A; --dark: #111111; --dark2: #181818; --white: #F4F0E8; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Raleway', sans-serif; font-weight: 400; overflow-x: hidden; }
+
+    /* HEADER */
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 12px 48px; background: rgba(10,10,10,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(201,168,76,0.2); }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo img { height: 48px; width: auto; }
+    nav { display: flex; align-items: center; gap: 26px; }
+    nav a { color: var(--white); text-decoration: none; font-size: 0.73rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; transition: opacity 0.2s, color 0.2s; }
+    nav a:hover { opacity: 1; color: var(--gold); }
+    .btn-call { display: flex; align-items: center; gap: 7px; background: var(--gold); color: #000; text-decoration: none; padding: 10px 20px; font-size: 0.73rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.2s; }
+    .btn-call:hover { background: var(--gold-light); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 23px; height: 1.5px; background: var(--gold); }
+
+    /* MOBILE NAV */
+    .mobile-nav { display: none; position: fixed; inset: 0; background: rgba(10,10,10,0.98); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 30px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 1.3rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); text-decoration: none; opacity: 0.7; }
+    .mobile-nav a:hover { color: var(--gold); opacity: 1; }
+    .mobile-close { position: absolute; top: 22px; right: 26px; background: none; border: none; color: var(--gold); font-size: 1.5rem; cursor: pointer; }
+
+    /* HERO */
+    .hero { position: relative; height: 100vh; min-height: 560px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.55) 60%, rgba(10,10,10,1) 100%), url('hero-accueil.jpg') center/cover no-repeat; }
+    .hero-content { position: relative; padding: 0 24px; animation: fadeUp 0.9s ease both; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-badge { display: inline-block; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .hero h1 { font-size: clamp(2rem, 6vw, 4rem); font-weight: 300; line-height: 1.1; color: var(--white); margin-bottom: 12px; }
+    .hero h1 strong { font-weight: 700; color: var(--gold); display: block; }
+    .hero-tagline { font-size: clamp(0.75rem, 2vw, 0.9rem); font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.55; margin-bottom: 16px; }
+    .hero-seo { font-size: 0.82rem; opacity: 0.6; line-height: 1.75; max-width: 580px; margin: 0 auto 32px; }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-taxi { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: #000; text-decoration: none; padding: 14px 32px; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; transition: background 0.2s; }
+    .btn-taxi:hover { background: var(--gold-light); }
+    .btn-vtc { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(201,168,76,0.45); color: var(--gold); text-decoration: none; padding: 14px 32px; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; transition: border-color 0.2s, background 0.2s; }
+    .btn-vtc:hover { border-color: var(--gold); background: rgba(201,168,76,0.06); }
+
+    /* ZONES */
+    .zones { background: var(--dark2); border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15); padding: 16px 40px; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+    .zones-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-right: 4px; }
+    .zone-tag { font-size: 0.68rem; font-weight: 400; letter-spacing: 0.07em; color: var(--white); opacity: 0.5; padding: 3px 9px; border: 1px solid rgba(255,255,255,0.1); white-space: nowrap; }
+    .zone-tag.highlight { border-color: rgba(201,168,76,0.3); color: var(--gold); opacity: 0.7; }
+    .zone-sep { color: var(--gold); opacity: 0.2; font-size: 0.6rem; }
+
+    /* SECTIONS */
+    section { padding: 84px 48px; }
+    .sec-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); opacity: 0.75; margin-bottom: 10px; }
+    .gold-bar { width: 38px; height: 1px; background: var(--gold); opacity: 0.45; margin: 20px 0; }
+    .sec-desc { font-size: 0.86rem; line-height: 1.85; opacity: 0.5; max-width: 500px; }
+
+    /* SERVICES */
+    .services { background: var(--black); }
+    .services-wrap { max-width: 1060px; margin: 0 auto; }
+    .services-head { text-align: center; margin-bottom: 52px; }
+    .services-head .gold-bar { margin: 18px auto; }
+    .services-head .sec-desc { margin: 0 auto; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .svc { background: var(--dark2); padding: 42px 30px; position: relative; overflow: hidden; transition: background 0.3s; }
+    .svc::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.35s; }
+    .svc:hover { background: #1C1C1C; }
+    .svc:hover::after { transform: scaleX(1); }
+    .svc-icon { width: 36px; height: 36px; margin-bottom: 20px; color: var(--gold); }
+    .svc h2 { font-size: 0.95rem; font-weight: 700; color: var(--gold); margin-bottom: 12px; }
+    .svc-desc { font-size: 0.8rem; line-height: 1.8; opacity: 0.5; margin-bottom: 20px; }
+    .svc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+    .svc-tag { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); opacity: 0.4; padding: 3px 8px; border: 1px solid rgba(255,255,255,0.12); }
+    .svc-link { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); text-decoration: none; opacity: 0.6; transition: opacity 0.2s; }
+    .svc-link:hover { opacity: 1; }
+
+    /* POURQUOI */
+    .pourquoi { background: var(--dark); }
+    .pourquoi-wrap { max-width: 1060px; margin: 0 auto; }
+    .pourquoi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 48px; }
+    .pourquoi-card { background: var(--dark2); padding: 36px 28px; border-top: 2px solid rgba(201,168,76,0.15); transition: border-color 0.3s, background 0.3s; }
+    .pourquoi-card:hover { border-color: var(--gold); background: #1C1C1C; }
+    .pourquoi-icon { width: 32px; height: 32px; color: var(--gold); margin-bottom: 18px; }
+    .pourquoi-card h2 { font-size: 0.88rem; font-weight: 700; margin-bottom: 10px; }
+    .pourquoi-desc { font-size: 0.78rem; line-height: 1.75; opacity: 0.48; }
+
+    /* AVIS */
+    .avis { background: var(--dark2); text-align: center; padding: 70px 48px; }
+    .stars { color: var(--gold); font-size: 1.3rem; letter-spacing: 6px; margin-bottom: 10px; }
+    .avis-num { font-size: 3rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .avis-sub { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.38; margin: 8px 0 26px; }
+    .avis-cta { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.3); padding-bottom: 3px; }
+
+    /* CTA */
+    .cta { background: var(--black); text-align: center; }
+    .cta-wrap { max-width: 620px; margin: 0 auto; }
+    .cta-sub { font-size: 0.83rem; opacity: 0.42; margin-bottom: 34px; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { display: inline-block; background: var(--gold); color: #000; text-decoration: none; padding: 13px 34px; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; transition: background 0.2s; }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-outline { display: inline-block; border: 1px solid rgba(201,168,76,0.45); color: var(--gold); text-decoration: none; padding: 13px 34px; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; transition: border-color 0.2s, background 0.2s; }
+    .btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.06); }
+
+    /* FOOTER */
+    footer { background: #060606; border-top: 1px solid rgba(201,168,76,0.1); padding: 50px 48px 30px; }
+    .footer-wrap { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 34px; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 26px; }
+    .footer-logo img { height: 56px; width: auto; margin-bottom: 14px; }
+    .footer-brand p { font-size: 0.76rem; line-height: 1.8; opacity: 0.38; max-width: 250px; }
+    .footer-socials { display: flex; gap: 16px; margin-top: 16px; }
+    .footer-socials a { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); text-decoration: none; opacity: 0.38; transition: opacity 0.2s, color 0.2s; }
+    .footer-socials a:hover { opacity: 1; color: var(--gold); }
+    .footer-col h4 { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); opacity: 0.65; margin-bottom: 16px; }
+    .footer-col a { display: block; color: var(--white); text-decoration: none; font-size: 0.76rem; opacity: 0.38; margin-bottom: 9px; transition: opacity 0.2s; }
+    .footer-col a:hover { opacity: 0.85; }
+    .footer-bottom { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; font-size: 0.68rem; opacity: 0.28; }
+
+    /* WHATSAPP */
+    .whatsapp-btn { position: fixed; bottom: 80px; right: 20px; z-index: 98; width: 52px; height: 52px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(37,211,102,0.35); transition: transform 0.2s; }
+    .whatsapp-btn:hover { transform: scale(1.08); }
+    .whatsapp-btn svg { width: 28px; height: 28px; fill: white; }
+    .sticky-call { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; background: var(--gold); color: #000; text-align: center; padding: 15px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; }
+
+    /* H3 GLOBAL */
+    h3 { font-size: 2rem; font-weight: 300; line-height: 1.2; color: var(--white); }
+    @media (max-width: 560px) { h3 { font-size: 1.6rem; } }
+
+    /* RESPONSIVE */
+    @media (max-width: 920px) {
+      nav { display: none; }
+      .hamburger { display: flex; }
+      header { padding: 12px 22px; }
+      section { padding: 60px 22px; }
+      .zones { padding: 14px 22px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .pourquoi-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
+      .footer-wrap { grid-template-columns: 1fr; gap: 28px; }
+      .sticky-call { display: block; }
+      body { padding-bottom: 52px; }
+      .whatsapp-btn { bottom: 72px; }
+      .footer-bottom { flex-direction: column; gap: 6px; text-align: center; }
+    }
+    @media (max-width: 560px) {
+      .pourquoi-grid { grid-template-columns: 1fr; }
+      .hero-btns, .cta-btns { flex-direction: column; align-items: center; }
+      .btn-taxi, .btn-vtc, .btn-primary, .btn-outline { width: 100%; text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">
+    <img src="logo.png" alt="Taxi RF — Taxi & Chauffeur Privé Oise" />
+  </a>
+  <nav>
+    <a href="/">Accueil</a>
+    <a href="/taxi.html">Taxi</a>
+    <a href="/vtc.html">VTC</a>
+    <a href="/tarifs.html">Tarifs</a>
+    <a href="/reservation.html">Réservation</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+  <a href="tel:+33605717711" class="btn-call">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+    06 05 71 77 11
+  </a>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="/" onclick="toggleMenu()">Accueil</a>
+  <a href="/taxi.html" onclick="toggleMenu()">Taxi</a>
+  <a href="/vtc.html" onclick="toggleMenu()">VTC</a>
+  <a href="/tarifs.html" onclick="toggleMenu()">Tarifs</a>
+  <a href="/reservation.html" onclick="toggleMenu()">Réservation</a>
+  <a href="/contact.html" onclick="toggleMenu()">Contact</a>
+  <a href="tel:+33605717711" style="color:var(--gold);opacity:1;">06 05 71 77 11</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <span class="hero-badge">Oise — Île-de-France — Aéroports — Gares</span>
+    <h1>Taxi & VTC dans l'Oise
+      <strong>Compiègne, Noyon, Pierrefonds</strong>
+    </h1>
+    <p class="hero-tagline">Excellence · Confort · Ponctualité — 24h/24 · 7j/7</p>
+    <p class="hero-seo">Taxi RF propose un service de taxi et VTC dans l'Oise (60) pour vos déplacements personnels et professionnels. Nous assurons les transferts vers les aéroports CDG, Orly et Beauvais, ainsi que vers les grandes gares parisiennes, depuis Compiègne, Noyon, Pierrefonds et les communes environnantes. Service disponible sur réservation avec tarifs annoncés à l'avance et véhicules confortables.</p>
+    <div class="hero-btns">
+      <a href="/taxi.html" class="btn-taxi">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="11" width="22" height="9" rx="2"/><path d="M5 11V7a7 7 0 0 1 14 0v4"/><circle cx="7.5" cy="16.5" r="1.5"/><circle cx="16.5" cy="16.5" r="1.5"/></svg>
+        Réserver un Taxi
+      </a>
+      <a href="/vtc.html" class="btn-vtc">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v5"/><circle cx="16" cy="17" r="2"/><circle cx="9" cy="17" r="2"/></svg>
+        Réserver un VTC
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ZONES -->
+<div class="zones">
+  <span class="zones-label">Zones desservies</span>
+  <span class="zone-tag">Compiègne</span><span class="zone-sep">·</span>
+  <span class="zone-tag">Noyon</span><span class="zone-sep">·</span>
+  <span class="zone-tag">Ribécourt</span><span class="zone-sep">·</span>
+  <span class="zone-tag">Thourotte</span><span class="zone-sep">·</span>
+  <span class="zone-tag">Pierrefonds</span><span class="zone-sep">·</span>
+  <span class="zone-tag">Pont-Ste-Maxence</span><span class="zone-sep">·</span>
+  <span class="zone-tag">Lacroix-Saint-Ouen</span><span class="zone-sep">·</span>
+  <span class="zone-tag">Venette</span><span class="zone-sep">·</span>
+  <span class="zone-tag">Clairoix</span><span class="zone-sep">·</span>
+  <span class="zone-tag">Choisy-au-Bac</span><span class="zone-sep">·</span>
+  <span class="zone-tag">Verberie</span><span class="zone-sep">·</span>
+  <span class="zone-tag highlight">Île-de-France</span>
+</div>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="services-wrap">
+    <div class="services-head">
+      <p class="sec-label">Nos prestations</p>
+      <h3>Trois services, une exigence</h3>
+      <div class="gold-bar"></div>
+      <p class="sec-desc">Transferts professionnels, ponctualité et discrétion. Chaque trajet est soigné et adapté à vos besoins.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+        <h2>Transferts Aéroports</h2>
+        <p class="svc-desc">Depuis l'Oise vers CDG, Orly et Beauvais. Tarifs fixes sur réservation, aller simple ou aller-retour.</p>
+        <div class="svc-tags"><span class="svc-tag">CDG</span><span class="svc-tag">Orly</span><span class="svc-tag">Beauvais</span></div>
+        <a href="/tarifs.html" class="svc-link">Voir les tarifs →</a>
+      </div>
+      <div class="svc">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="12" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M6 19l-2 2M18 19l2 2"/></svg>
+        <h2>Transferts Gares</h2>
+        <p class="svc-desc">Depuis l'Oise vers les grandes gares parisiennes. Ponctualité garantie, suivi de votre train en temps réel.</p>
+        <div class="svc-tags"><span class="svc-tag">Gare du Nord/Est</span><span class="svc-tag">Gare de Lyon</span><span class="svc-tag">Montparnasse</span></div>
+        <a href="/tarifs.html" class="svc-link">Voir les tarifs →</a>
+      </div>
+      <div class="svc">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        <h2>Trajets locaux & longue distance</h2>
+        <p class="svc-desc">Déplacements dans l'Oise, Île-de-France et au-delà. Tarif fixe convenu à l'avance, sans mauvaise surprise.</p>
+        <div class="svc-tags"><span class="svc-tag">Oise</span><span class="svc-tag">Paris</span><span class="svc-tag">Île-de-France</span></div>
+        <a href="/reservation.html" class="svc-link">Réserver →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POURQUOI TAXI RF -->
+<section class="pourquoi">
+  <div class="pourquoi-wrap">
+    <p class="sec-label">Pourquoi nous choisir</p>
+    <h2>Pourquoi choisir Taxi RF ?</h2>
+    <div class="gold-bar"></div>
+    <div class="pourquoi-grid">
+      <div class="pourquoi-card">
+        <svg class="pourquoi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+        <h2>Ponctualité garantie</h2>
+        <p class="pourquoi-desc">Présence 15 minutes avant l'heure de réservation. Départ sans stress, toujours à l'heure.</p>
+      </div>
+      <div class="pourquoi-card">
+        <svg class="pourquoi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <h2>Tarif annoncé à l'avance</h2>
+        <p class="pourquoi-desc">Prix confirmé à la réservation. Pas de mauvaise surprise à l'arrivée, transparence totale.</p>
+      </div>
+      <div class="pourquoi-card">
+        <svg class="pourquoi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+        <h2>Taxi & VTC</h2>
+        <p class="pourquoi-desc">Deux services, un seul numéro. Tarif officiel au compteur ou forfait VTC, selon vos besoins.</p>
+      </div>
+      <div class="pourquoi-card">
+        <svg class="pourquoi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <h2>Disponible 24h/24</h2>
+        <p class="pourquoi-desc">7 jours sur 7, nuit et week-end inclus. Réservation par téléphone, WhatsApp ou en ligne.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section class="avis">
+  <p class="sec-label">Avis clients Google</p>
+  <div class="stars">★★★★★</div>
+  <div class="avis-num">5 / 5</div>
+  <p class="avis-sub">5 avis vérifiés sur Google</p>
+  <a href="https://g.page/r/CcpAITPBBTT0EBE/review" target="_blank" class="avis-cta">Laisser un avis →</a>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-wrap">
+    <p class="sec-label">Prêt à partir ?</p>
+    <h3>Choisissez votre service</h3>
+    <div class="gold-bar" style="margin:18px auto;"></div>
+    <p class="cta-sub">Disponible 24h/24 — 7j/7. Réponse rapide par téléphone ou WhatsApp.</p>
+    <div class="cta-btns">
+      <a href="/taxi.html" class="btn-primary">Réserver un Taxi</a>
+      <a href="/vtc.html" class="btn-outline">Réserver un VTC</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-wrap">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="logo.png" alt="Taxi RF" />
+      </div>
+      <p>Service de taxi et VTC dans l'Oise et Île-de-France. Transferts vers Paris, aéroports et gares parisiennes. Disponible 24h/24 — 7j/7.</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/taxi_rf_fouad_" target="_blank">Instagram</a>
+        <a href="https://facebook.com/taxirf.fouad" target="_blank">Facebook</a>
+        <a href="https://g.page/r/CcpAITPBBTT0EBE/review" target="_blank">Google</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="/">Accueil</a>
+      <a href="/taxi.html">Service Taxi</a>
+      <a href="/vtc.html">Service VTC</a>
+      <a href="/tarifs.html">Tarifs</a>
+      <a href="/reservation.html">Réservation</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:+33605717711">06 05 71 77 11</a>
+      <a href="https://wa.me/33605717711">WhatsApp</a>
+      <a href="mailto:infos@taxirf.com">infos@taxirf.com</a>
+      <a href="mailto:reservations@taxirf.com">reservations@taxirf.com</a>
+      <a href="#">Politique de confidentialité</a>
+      <a href="#">Mentions légales</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Taxi RF — Tous droits réservés</span>
+    <span>Oise · Île-de-France · Aéroports · Gares</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/33605717711" target="_blank" class="whatsapp-btn">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<a href="tel:+33605717711" class="sticky-call">Appeler : 06 05 71 77 11</a>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

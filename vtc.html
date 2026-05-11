@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Taxi RF — Service VTC sur réservation dans l'Oise et Île-de-France. Transferts CDG, Orly, Beauvais et gares parisiennes depuis Compiègne, Noyon. Tarif fixe annoncé avant réservation. 06 05 71 77 11." />
+  <meta name="keywords" content="VTC Oise, VTC Compiègne, chauffeur privé Oise, VTC aéroport CDG, VTC Île-de-France, chauffeur privé Compiègne, VTC Noyon, VTC Ribécourt" />
+  <title>Service VTC — Chauffeur Privé Oise & Île-de-France | Taxi RF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --gold: #C9A84C; --gold-light: #E2C97E; --black: #0A0A0A; --dark: #111111; --dark2: #181818; --white: #F4F0E8; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Raleway', sans-serif; font-weight: 400; overflow-x: hidden; }
+
+    /* HEADER */
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px 48px; background: rgba(10,10,10,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(201,168,76,0.2); }
+    .logo { display: flex; align-items: center; gap: 13px; text-decoration: none; }
+    .logo-icon { width: 40px; height: 40px; }
+    .logo-name { font-size: 1.05rem; font-weight: 700; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
+    .logo-sub { display: block; font-size: 0.56rem; font-weight: 400; letter-spacing: 0.18em; color: var(--white); opacity: 0.45; text-transform: uppercase; margin-top: 2px; }
+    nav { display: flex; align-items: center; gap: 26px; }
+    nav a { color: var(--white); text-decoration: none; font-size: 0.73rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; transition: opacity 0.2s, color 0.2s; }
+    nav a:hover, nav a.active { opacity: 1; color: var(--gold); }
+    .btn-call { display: flex; align-items: center; gap: 7px; background: var(--gold); color: #000; text-decoration: none; padding: 10px 20px; font-size: 0.73rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.2s; }
+    .btn-call:hover { background: var(--gold-light); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 23px; height: 1.5px; background: var(--gold); }
+
+    /* MOBILE NAV */
+    .mobile-nav { display: none; position: fixed; inset: 0; background: rgba(10,10,10,0.98); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 30px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 1.3rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); text-decoration: none; opacity: 0.7; }
+    .mobile-nav a:hover { color: var(--gold); opacity: 1; }
+    .mobile-close { position: absolute; top: 22px; right: 26px; background: none; border: none; color: var(--gold); font-size: 1.5rem; cursor: pointer; }
+
+    /* HERO */
+    .hero { position: relative; height: 75vh; min-height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.55) 60%, rgba(10,10,10,1) 100%), url('hero-vtc.jpg') center/cover no-repeat; }
+    .hero-content { position: relative; padding: 0 24px; animation: fadeUp 0.9s ease both; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-badge { display: inline-block; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+    .hero h1 { font-size: clamp(2rem, 6vw, 4.2rem); font-weight: 300; line-height: 1.1; color: var(--white); margin-bottom: 12px; }
+    .hero h1 strong { font-weight: 700; color: var(--gold); }
+    .hero-tagline { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.55; margin-bottom: 10px; }
+    .hero-pro { font-size: 0.78rem; opacity: 0.38; margin-bottom: 32px; }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { display: inline-block; background: var(--gold); color: #000; text-decoration: none; padding: 13px 34px; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; transition: background 0.2s; }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-whatsapp { display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: #fff; text-decoration: none; padding: 13px 28px; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.2s; }
+    .btn-whatsapp:hover { background: #20b858; }
+    .btn-whatsapp svg { width: 16px; height: 16px; fill: white; }
+
+    h3 { font-size: 2rem; font-weight: 300; line-height: 1.2; color: var(--white); }
+    @media (max-width: 560px) { h3 { font-size: 1.6rem; } }
+
+    h3 { font-size: 2rem; font-weight: 300; line-height: 1.2; color: var(--white); }
+
+    /* SECTIONS */
+    section { padding: 84px 48px; }
+    .sec-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); opacity: 0.75; margin-bottom: 10px; }
+    .sec-title { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 300; line-height: 1.2; margin-bottom: 14px; }
+    .sec-title strong { font-weight: 700; color: var(--gold); }
+    .gold-bar { width: 38px; height: 1px; background: var(--gold); opacity: 0.45; margin: 20px 0; }
+    .sec-desc { font-size: 0.86rem; line-height: 1.85; opacity: 0.5; max-width: 520px; }
+    .wrap { max-width: 1060px; margin: 0 auto; }
+
+    /* ATOUTS VTC */
+    .atouts { background: var(--dark2); }
+    .atouts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 44px; }
+    .atout { background: var(--dark); padding: 32px 24px; text-align: center; }
+    .atout-icon { width: 32px; height: 32px; color: var(--gold); margin: 0 auto 14px; }
+    .atout-val { font-size: 1.2rem; font-weight: 700; color: var(--gold); margin-bottom: 6px; }
+    .atout-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.42; line-height: 1.4; }
+
+    /* CALCULATEUR */
+    .calculateur { background: var(--black); }
+    .calc-wrap { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .calc-box { background: var(--dark2); padding: 40px; }
+    .calc-title { font-size: 1rem; font-weight: 700; color: var(--gold); margin-bottom: 28px; letter-spacing: 0.05em; }
+    .calc-field { margin-bottom: 20px; }
+    .calc-field label { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.5; margin-bottom: 8px; }
+    .calc-field input { width: 100%; background: var(--dark); border: 1px solid rgba(201,168,76,0.2); color: var(--white); padding: 12px 16px; font-size: 0.85rem; font-family: 'Raleway', sans-serif; outline: none; transition: border-color 0.2s; }
+    .calc-field input:focus { border-color: var(--gold); }
+    .calc-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
+    .calc-option { background: var(--dark); border: 1px solid rgba(255,255,255,0.08); padding: 12px 16px; cursor: pointer; text-align: center; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.5; transition: all 0.2s; }
+    .calc-option.selected { border-color: var(--gold); color: var(--gold); opacity: 1; background: rgba(201,168,76,0.06); }
+    .btn-calc { width: 100%; background: var(--gold); color: #000; border: none; padding: 14px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-family: 'Raleway', sans-serif; transition: background 0.2s; }
+    .btn-calc:hover { background: var(--gold-light); }
+    .calc-result { margin-top: 20px; padding: 20px; background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.25); display: none; }
+    .calc-result.show { display: block; }
+    .result-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.45; margin-bottom: 8px; }
+    .result-price { font-size: 2rem; font-weight: 700; color: var(--gold); }
+    .result-detail { font-size: 0.72rem; opacity: 0.4; margin-top: 6px; line-height: 1.6; }
+    .calc-note { font-size: 0.72rem; opacity: 0.35; margin-top: 14px; line-height: 1.6; }
+
+    /* TARIFS DETAIL */
+    .tarif-detail { background: var(--dark2); padding: 32px; }
+    .tarif-detail-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); opacity: 0.7; margin-bottom: 20px; }
+    .tarif-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .tarif-row:last-child { border-bottom: none; }
+    .tarif-name { font-size: 0.8rem; opacity: 0.6; }
+    .tarif-price { font-size: 0.9rem; font-weight: 700; color: var(--gold); }
+    .tarif-separator { height: 1px; background: rgba(201,168,76,0.15); margin: 20px 0; }
+
+    /* 5 CARTES SERVICES */
+    .services { background: var(--dark); }
+    .services-head { text-align: center; margin-bottom: 52px; }
+    .services-head .gold-bar { margin: 18px auto; }
+    .services-head .sec-desc { margin: 0 auto; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .services-grid-bottom { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; margin-top: 2px; }
+    .svc { background: var(--dark2); padding: 38px 28px; position: relative; overflow: hidden; transition: background 0.3s; }
+    .svc::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.35s; }
+    .svc:hover { background: #1C1C1C; }
+    .svc:hover::after { transform: scaleX(1); }
+    .svc-icon { width: 34px; height: 34px; margin-bottom: 18px; color: var(--gold); }
+    .svc-name { font-size: 0.92rem; font-weight: 700; color: var(--gold); margin-bottom: 10px; }
+    .svc-desc { font-size: 0.8rem; line-height: 1.8; opacity: 0.5; margin-bottom: 18px; }
+    .svc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .svc-tag { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); opacity: 0.38; padding: 3px 8px; border: 1px solid rgba(255,255,255,0.1); }
+
+    /* CONFORT */
+    .confort { background: var(--black); }
+    .confort-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 44px; }
+    .confort-card { background: var(--dark2); padding: 36px 28px; border-top: 2px solid rgba(201,168,76,0.15); transition: border-color 0.3s; }
+    .confort-card:hover { border-color: var(--gold); }
+    .confort-icon { width: 30px; height: 30px; color: var(--gold); margin-bottom: 16px; }
+    .confort-title { font-size: 0.88rem; font-weight: 700; margin-bottom: 10px; }
+    .confort-desc { font-size: 0.78rem; line-height: 1.75; opacity: 0.48; }
+
+    /* DEVIS WHATSAPP */
+    .devis { background: var(--dark2); text-align: center; padding: 80px 48px; }
+    .devis-wrap { max-width: 600px; margin: 0 auto; }
+    .devis-icon { width: 48px; height: 48px; fill: #25D366; margin: 0 auto 20px; display: block; }
+    .devis .sec-title { margin-bottom: 16px; }
+    .devis-desc { font-size: 0.86rem; opacity: 0.45; line-height: 1.8; margin-bottom: 32px; }
+    .btn-wa-large { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #fff; text-decoration: none; padding: 16px 40px; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; transition: background 0.2s; }
+    .btn-wa-large:hover { background: #20b858; }
+    .btn-wa-large svg { width: 20px; height: 20px; fill: white; }
+
+    /* PROS */
+    .pros { background: var(--dark); }
+    .pros-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 44px; }
+    .pro-card { background: var(--dark2); padding: 34px 26px; border-top: 2px solid rgba(201,168,76,0.15); transition: border-color 0.3s; }
+    .pro-card:hover { border-color: var(--gold); }
+    .pro-icon { width: 28px; height: 28px; color: var(--gold); margin-bottom: 14px; }
+    .pro-title { font-size: 0.85rem; font-weight: 700; margin-bottom: 9px; }
+    .pro-desc { font-size: 0.77rem; line-height: 1.75; opacity: 0.46; }
+
+    /* CTA */
+    .cta { background: var(--black); text-align: center; }
+    .cta-wrap { max-width: 620px; margin: 0 auto; }
+    .cta-sub { font-size: 0.83rem; opacity: 0.42; margin-bottom: 34px; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-outline { display: inline-block; border: 1px solid rgba(201,168,76,0.45); color: var(--gold); text-decoration: none; padding: 13px 34px; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; transition: border-color 0.2s, background 0.2s; }
+    .btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.06); }
+
+    /* FOOTER */
+    footer { background: #060606; border-top: 1px solid rgba(201,168,76,0.1); padding: 50px 48px 30px; }
+    .footer-wrap { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 34px; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 26px; }
+    .footer-brand-name { font-size: 0.95rem; font-weight: 700; color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase; }
+    .footer-brand-sub { font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.38; margin-top: 3px; margin-bottom: 13px; }
+    .footer-brand p { font-size: 0.76rem; line-height: 1.8; opacity: 0.38; max-width: 250px; }
+    .footer-socials { display: flex; gap: 16px; margin-top: 16px; }
+    .footer-socials a { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); text-decoration: none; opacity: 0.38; transition: opacity 0.2s, color 0.2s; }
+    .footer-socials a:hover { opacity: 1; color: var(--gold); }
+    .footer-col h4 { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); opacity: 0.65; margin-bottom: 16px; }
+    .footer-col a { display: block; color: var(--white); text-decoration: none; font-size: 0.76rem; opacity: 0.38; margin-bottom: 9px; transition: opacity 0.2s; }
+    .footer-col a:hover { opacity: 0.85; }
+    .footer-bottom { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; font-size: 0.68rem; opacity: 0.28; }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-btn { position: fixed; bottom: 80px; right: 20px; z-index: 98; width: 52px; height: 52px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(37,211,102,0.35); transition: transform 0.2s; }
+    .whatsapp-btn:hover { transform: scale(1.08); }
+    .whatsapp-btn svg { width: 28px; height: 28px; fill: white; }
+
+    /* STICKY */
+    .sticky-call { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; background: var(--gold); color: #000; text-align: center; padding: 15px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 920px) {
+      nav { display: none; }
+      .hamburger { display: flex; }
+      header { padding: 15px 22px; }
+      section { padding: 60px 22px; }
+      .atouts-grid { grid-template-columns: repeat(2, 1fr); }
+      .calc-wrap { grid-template-columns: 1fr; gap: 32px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .services-grid-bottom { grid-template-columns: 1fr; }
+      .confort-grid { grid-template-columns: 1fr; }
+      .pros-grid { grid-template-columns: 1fr; }
+      .footer-wrap { grid-template-columns: 1fr; gap: 28px; }
+      .sticky-call { display: block; }
+      body { padding-bottom: 52px; }
+      .whatsapp-btn { bottom: 72px; }
+      .footer-bottom { flex-direction: column; gap: 6px; text-align: center; }
+      .devis { padding: 60px 22px; }
+    }
+    @media (max-width: 560px) {
+      .hero-btns, .cta-btns { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-whatsapp, .btn-outline, .btn-wa-large { width: 100%; text-align: center; justify-content: center; }
+      .calc-options { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">
+    <img src="logo.png" alt="Taxi RF" style="height:48px;width:auto;" />
+    <div>
+      <div class="logo-name">TAXI RF</div>
+      <span class="logo-sub">Taxi & Chauffeur Privé</span>
+    </div>
+  </a>
+  <nav>
+    <a href="/">Accueil</a>
+    <a href="/taxi.html">Taxi</a>
+    <a href="/vtc.html" class="active">VTC</a>
+    <a href="/tarifs.html">Tarifs</a>
+    <a href="/reservation.html">Réservation</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+  <a href="tel:+33605717711" class="btn-call">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+    06 05 71 77 11
+  </a>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="/" onclick="toggleMenu()">Accueil</a>
+  <a href="/taxi.html" onclick="toggleMenu()">Taxi</a>
+  <a href="/vtc.html" onclick="toggleMenu()">VTC</a>
+  <a href="/tarifs.html" onclick="toggleMenu()">Tarifs</a>
+  <a href="/reservation.html" onclick="toggleMenu()">Réservation</a>
+  <a href="/contact.html" onclick="toggleMenu()">Contact</a>
+  <a href="tel:+33605717711" style="color:var(--gold);opacity:1;">06 05 71 77 11</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <span class="hero-badge">Chauffeur Privé — Oise & Île-de-France</span>
+    <h1>VTC Chauffeur Privé
+      <strong>Oise &amp; Île-de-France</strong>
+    </h1>
+    <p class="hero-tagline">Confort · Discrétion · Ponctualité — 24h/24 · 7j/7</p>
+    <p class="hero-pro">Service VTC sur réservation dans l'Oise et en Île-de-France. Transferts vers CDG, Orly, Beauvais et les gares parisiennes depuis Compiègne, Noyon et les environs. Tarif fixe annoncé avant réservation.</p>
+    <div class="hero-btns">
+      <a href="/reservation.html" class="btn-primary">Réserver en ligne</a>
+      <a href="https://wa.me/33605717711" target="_blank" class="btn-whatsapp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        Devis WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ATOUTS -->
+<section class="atouts">
+  <div class="wrap">
+    <div class="atouts-grid">
+      <div class="atout">
+        <svg class="atout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div class="atout-val">4 max</div>
+        <div class="atout-label">Passagers<br>(3 recommandés)</div>
+      </div>
+      <div class="atout">
+        <svg class="atout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        <div class="atout-val">3 bagages</div>
+        <div class="atout-label">Valises<br>acceptées</div>
+      </div>
+      <div class="atout">
+        <svg class="atout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <div class="atout-val">Tarif fixe</div>
+        <div class="atout-label">Communiqué<br>à l'avance</div>
+      </div>
+      <div class="atout">
+        <svg class="atout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+        <div class="atout-val">24h/24</div>
+        <div class="atout-label">Disponible<br>7j/7</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATEUR -->
+<section class="calculateur">
+  <div class="calc-wrap wrap">
+    <div>
+      <p class="sec-label">Estimation de prix</p>
+      <h2>Calculez votre tarif VTC</h2>
+      <div class="gold-bar"></div>
+      <p class="sec-desc">Obtenez une estimation instantanée de votre trajet. Tarif fixe confirmé à la réservation.</p>
+      <br>
+      <div class="tarif-detail">
+        <div class="tarif-detail-title">Nos prestations VTC</div>
+        <div class="tarif-row"><span class="tarif-name">Transferts aéroports & gares</span><span class="tarif-price">Tarif communiqué à l'avance</span></div>
+        <div class="tarif-row"><span class="tarif-name">Trajets locaux & longue distance</span><span class="tarif-price">Estimation instantanée</span></div>
+        <div class="tarif-separator"></div>
+        <div class="tarif-row"><span class="tarif-name">Mise à disposition</span><span class="tarif-price">30 € / h</span></div>
+        <div class="tarif-row"><span class="tarif-name">Demi-journée / Journée</span><span class="tarif-price">Sur devis</span></div>
+        <div class="tarif-row"><span class="tarif-name">Van (groupe)</span><span class="tarif-price">Sur réservation</span></div>
+        <div class="tarif-row"><span class="tarif-name">Longue distance</span><span class="tarif-price">Nous contacter</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="calc-box">
+        <div class="calc-title">Estimez votre trajet</div>
+        <div class="calc-field">
+          <label>Adresse de départ</label>
+          <input type="text" id="origin" placeholder="Ex: Compiègne, France" />
+        </div>
+        <div class="calc-field">
+          <label>Adresse d'arrivée</label>
+          <input type="text" id="destination" placeholder="Ex: Aéroport CDG, Roissy" />
+        </div>
+        <label style="font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;opacity:0.5;display:block;margin-bottom:10px;">Type de trajet</label>
+        <div class="calc-options">
+          <div class="calc-option selected" onclick="selectOption(this,'aller')">Aller simple</div>
+          <div class="calc-option" onclick="selectOption(this,'aller-retour')">Aller-retour</div>
+        </div>
+        <button class="btn-calc" onclick="calculatePrice()">Calculer le prix</button>
+        <div class="calc-result" id="calcResult">
+          <div class="result-label">Estimation de votre trajet</div>
+          <div class="result-price" id="resultPrice">—</div>
+          <div class="result-detail" id="resultDetail">Tarif communiqué à la réservation</div>
+        </div>
+        <p class="calc-note">Estimation instantanée avant réservation. Tarif fixe confirmé à la réservation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 CARTES SERVICES -->
+<section class="services">
+  <div class="wrap">
+    <div class="services-head">
+      <p class="sec-label">Nos services VTC</p>
+      <h3>Cinq services, une disponibilité</h3>
+      <div class="gold-bar"></div>
+      <p class="sec-desc">Du transfert aéroport à la mise à disposition, nous nous adaptons à chaque besoin.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+        <h2 class="svc-name">Transferts Aéroports</h2>
+        <p class="svc-desc">Depuis l'Oise et Île-de-France vers CDG, Orly et Beauvais. Tarif fixe, suivi de vol inclus.</p>
+        <div class="svc-tags"><span class="svc-tag">CDG</span><span class="svc-tag">Orly</span><span class="svc-tag">Beauvais</span></div>
+      </div>
+      <div class="svc">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="12" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M6 19l-2 2M18 19l2 2"/></svg>
+        <h2 class="svc-name">Transferts Gares</h2>
+        <p class="svc-desc">Depuis l'Oise vers toutes les grandes gares parisiennes. Ponctualité garantie.</p>
+        <div class="svc-tags"><span class="svc-tag">Gare du Nord</span><span class="svc-tag">Gare de Lyon</span><span class="svc-tag">Montparnasse</span></div>
+      </div>
+      <div class="svc">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        <div class="svc-name">Trajets locaux & longue distance</div>
+        <p class="svc-desc">Déplacements dans l'Oise, Île-de-France et partout en France. Tarif convenu à l'avance.</p>
+        <div class="svc-tags"><span class="svc-tag">Oise</span><span class="svc-tag">Paris</span><span class="svc-tag">France</span></div>
+      </div>
+    </div>
+    <div class="services-grid-bottom">
+      <div class="svc">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <h2 class="svc-name">Transport de groupe</h2>
+        <p class="svc-desc">Van disponible sur réservation pour vos déplacements en groupe, familles ou événements collectifs.</p>
+        <div class="svc-tags"><span class="svc-tag">Van</span><span class="svc-tag">Groupe</span><span class="svc-tag">Famille</span></div>
+      </div>
+      <div class="svc">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+        <h2 class="svc-name">Mise à disposition</h2>
+        <p class="svc-desc">Chauffeur privé à votre service à l'heure ou à la journée. Idéal pour événements, réunions ou journées chargées.</p>
+        <div class="svc-tags"><span class="svc-tag">À l'heure — 30€/h</span><span class="svc-tag">Demi-journée</span><span class="svc-tag">Journée</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFORT À BORD -->
+<section class="confort">
+  <div class="wrap">
+    <p class="sec-label">À bord</p>
+    <h2>Le confort inclus</h2>
+    <div class="gold-bar"></div>
+    <div class="confort-grid">
+      <div class="confort-card">
+        <svg class="confort-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+        <div class="confort-title">Wi-Fi gratuit</div>
+        <p class="confort-desc">Connexion internet incluse durant tout votre trajet pour rester connecté.</p>
+      </div>
+      <div class="confort-card">
+        <svg class="confort-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        <div class="confort-title">Chargeurs multi-appareils</div>
+        <p class="confort-desc">Chargeurs disponibles pour tous types d'appareils — iPhone, Android, USB-C.</p>
+      </div>
+      <div class="confort-card">
+        <svg class="confort-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        <div class="confort-title">Boissons fraîches</div>
+        <p class="confort-desc">Eau et boissons fraîches à disposition durant votre trajet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEVIS WHATSAPP -->
+<section class="devis">
+  <div class="devis-wrap">
+    <svg class="devis-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    <p class="sec-label">Devis rapide</p>
+    <h2>Besoin d'un devis ?</h2>
+    <p class="devis-desc">Pour les trajets longue distance, les groupes, la mise à disposition à la journée ou toute demande spécifique — contactez-nous directement sur WhatsApp. Réponse rapide garantie.</p>
+    <a href="https://wa.me/33605717711" target="_blank" class="btn-wa-large">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+      Contacter sur WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- PROFESSIONNELS -->
+<section class="pros">
+  <div class="wrap">
+    <p class="sec-label">Entreprises & professionnels</p>
+    <h2>Entreprises &amp; professionnels</h2>
+    <div class="gold-bar"></div>
+    <div class="pros-grid">
+      <div class="pro-card">
+        <svg class="pro-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <div class="pro-title">Facture professionnelle</div>
+        <p class="pro-desc">Facture détaillée envoyée par email après chaque course pour votre comptabilité.</p>
+      </div>
+      <div class="pro-card">
+        <svg class="pro-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        <div class="pro-title">CB & American Express</div>
+        <p class="pro-desc">Terminal de paiement à bord acceptant toutes les cartes, y compris American Express.</p>
+      </div>
+      <div class="pro-card">
+        <svg class="pro-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <div class="pro-title">Réservation planifiée</div>
+        <p class="pro-desc">Planifiez vos déplacements à l'avance. Disponibilité et ponctualité garanties pour chaque mission.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-wrap">
+    <p class="sec-label">Prêt à partir ?</p>
+    <h2>Réservez votre VTC maintenant</h2>
+    <p class="cta-sub">Tarif fixe confirmé à la réservation. Disponible 24h/24 — 7j/7.</p>
+    <div class="cta-btns">
+      <a href="/reservation.html" class="btn-primary">Réserver en ligne</a>
+      <a href="https://wa.me/33605717711" target="_blank" class="btn-whatsapp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        Devis WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-wrap">
+    <div class="footer-brand">
+      <div class="footer-brand-name">TAXI RF</div>
+      <div class="footer-brand-sub">Taxi & Chauffeur Privé</div>
+      <p>Service de taxi et VTC dans l'Oise et Île-de-France. Transferts vers Paris, aéroports et gares. Disponible 24h/24 — 7j/7.</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/taxi_rf_fouad_" target="_blank">Instagram</a>
+        <a href="https://facebook.com/taxirf.fouad" target="_blank">Facebook</a>
+        <a href="https://g.page/r/CcpAITPBBTT0EBE/review" target="_blank">Google</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="/">Accueil</a>
+      <a href="/taxi.html">Service Taxi</a>
+      <a href="/vtc.html">Service VTC</a>
+      <a href="/tarifs.html">Tarifs</a>
+      <a href="/reservation.html">Réservation</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:+33605717711">06 05 71 77 11</a>
+      <a href="https://wa.me/33605717711">WhatsApp</a>
+      <a href="mailto:infos@taxirf.com">infos@taxirf.com</a>
+      <a href="mailto:reservations@taxirf.com">reservations@taxirf.com</a>
+      <a href="#">Politique de confidentialité</a>
+      <a href="#">Mentions légales</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Taxi RF — Tous droits réservés</span>
+    <span>Oise · Île-de-France · Aéroports · Gares</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/33605717711" target="_blank" class="whatsapp-btn">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<a href="tel:+33605717711" class="sticky-call">Appeler : 06 05 71 77 11</a>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+
+  let selectedType = 'aller';
+  function selectOption(el, type) {
+    document.querySelectorAll('.calc-option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedType = type;
+  }
+
+  function calculatePrice() {
+    const origin = document.getElementById('origin').value.trim();
+    const destination = document.getElementById('destination').value.trim();
+    if (!origin || !destination) {
+      alert('Veuillez renseigner le départ et la destination.');
+      return;
+    }
+    const service = new google.maps.DistanceMatrixService();
+    service.getDistanceMatrix({
+      origins: [origin],
+      destinations: [destination],
+      travelMode: google.maps.TravelMode.DRIVING,
+      unitSystem: google.maps.UnitSystem.METRIC,
+    }, (response, status) => {
+      if (status === 'OK' && response.rows[0].elements[0].status === 'OK') {
+        const distanceM = response.rows[0].elements[0].distance.value;
+        const distanceKm = distanceM / 1000;
+        const distanceText = response.rows[0].elements[0].distance.text;
+        const prise = 4;
+        const km = 1.65;
+        let prix = prise + (distanceKm * km);
+        if (selectedType === 'aller-retour') prix = prix * 2;
+        prix = Math.ceil(prix);
+        document.getElementById('resultPrice').textContent = prix + ' €';
+        document.getElementById('resultDetail').textContent =
+          `${distanceText} · 4€ prise en charge + ${distanceKm.toFixed(1)} km × 1,65€` +
+          (selectedType === 'aller-retour' ? ' (aller-retour)' : '');
+        document.getElementById('calcResult').classList.add('show');
+      } else {
+        alert('Impossible de calculer ce trajet. Vérifiez les adresses ou contactez-nous sur WhatsApp.');
+      }
+    });
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=VOTRE_CLE_API_GOOGLE&libraries=places"></script>
+</body>
+</html>

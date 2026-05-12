@@ -37,11 +37,11 @@
 
     /* HERO */
     .hero { position: relative; height: 75vh; min-height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.55) 60%, rgba(10,10,10,1) 100%), url('hero-vtc.jpg') center/cover no-repeat; }
+    .hero-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.55) 60%, rgba(10,10,10,1) 100%), url('hero-vtc.jpg') center center / cover no-repeat; }
     .hero-content { position: relative; padding: 0 24px; animation: fadeUp 0.9s ease both; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
     .hero-badge { display: inline-block; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
-    .hero h1 { font-size: clamp(2rem, 6vw, 4.2rem); font-weight: 300; line-height: 1.1; color: var(--white); margin-bottom: 12px; }
+    .hero h1 { font-size: clamp(1.6rem, 4.5vw, 3.2rem); font-weight: 300; line-height: 1.1; color: var(--white); margin-bottom: 12px; }
     .hero h1 strong { font-weight: 700; color: var(--gold); }
     .hero-tagline { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.55; margin-bottom: 10px; }
     .hero-pro { font-size: 0.78rem; opacity: 0.38; margin-bottom: 32px; }
@@ -53,9 +53,11 @@
     .btn-whatsapp svg { width: 16px; height: 16px; fill: white; }
 
     h3 { font-size: 2rem; font-weight: 300; line-height: 1.2; color: var(--white); }
+    .svc h2, .atout-title, .confort-title, .pro-title { font-size: 0.92rem !important; font-weight: 700 !important; }
     @media (max-width: 560px) { h3 { font-size: 1.6rem; } }
 
     h3 { font-size: 2rem; font-weight: 300; line-height: 1.2; color: var(--white); }
+    .svc h2, .atout-title, .confort-title, .pro-title { font-size: 0.92rem !important; font-weight: 700 !important; }
 
     /* SECTIONS */
     section { padding: 84px 48px; }
@@ -177,7 +179,7 @@
     .whatsapp-btn svg { width: 28px; height: 28px; fill: white; }
 
     /* STICKY */
-    .sticky-call { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; background: var(--gold); color: #000; text-align: center; padding: 15px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; }
+    .sticky-call { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; background: var(--gold); color: #000; text-align: center; padding: 11px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; }
 
     /* RESPONSIVE */
     @media (max-width: 920px) {
@@ -248,9 +250,7 @@
   <div class="hero-bg"></div>
   <div class="hero-content">
     <span class="hero-badge">Chauffeur Privé — Oise & Île-de-France</span>
-    <h1>VTC Chauffeur Privé
-      <strong>Oise &amp; Île-de-France</strong>
-    </h1>
+    <h1>VTC Chauffeur Privé<br><strong>Oise &amp; Île-de-France</strong></h1>
     <p class="hero-tagline">Confort · Discrétion · Ponctualité — 24h/24 · 7j/7</p>
     <p class="hero-pro">Service VTC sur réservation dans l'Oise et en Île-de-France. Transferts vers CDG, Orly, Beauvais et les gares parisiennes depuis Compiègne, Noyon et les environs. Tarif fixe annoncé avant réservation.</p>
     <div class="hero-btns">

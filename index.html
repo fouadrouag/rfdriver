@@ -294,14 +294,98 @@ footer { background: #060606; border-top: 1px solid rgba(201,168,76,0.1); paddin
 .seo-zones { font-size: 0; height: 0; overflow: hidden; position: absolute; }
 
 @media (max-width: 1023px) {
-  .sticky-call { display: block; }
-  body { padding-bottom: 50px; }
-  .whatsapp-btn { bottom: 62px; }
-  footer { padding: 40px 22px 24px; }
-  .footer-wrap { grid-template-columns: 1fr; gap: 24px; }
-  .footer-bottom { flex-direction: column; gap: 5px; text-align: center; }
+
+  /* HEADER MOBILE */
+  header {
+    padding: 12px 18px;
+  }
+
+  nav,
+  .btn-call {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .logo img {
+    height: 38px;
+    width: auto;
+  }
+
+  /* BODY */
+  body {
+    overflow-x: hidden;
+    padding-bottom: 80px;
+  }
+
+  /* HERO MOBILE */
+  .hero-mobile {
+    min-height: 70vh;
+  }
+
+  .hero-mobile .hero-content {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .hero-mobile .hero-btns {
+    width: 100%;
+  }
+
+  .hero-mobile .btn-taxi,
+  .hero-mobile .btn-vtc {
+    width: 100%;
+  }
+
+  /* ENGAGEMENTS MOBILE */
+  .engagements-mobile {
+    padding: 40px 22px;
+  }
+
+  /* FOOTER MOBILE */
+  footer {
+    padding: 40px 22px 24px;
+  }
+
+  .footer-wrap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  /* WHATSAPP */
+  .whatsapp-btn {
+    bottom: 80px;
+  }
+
+  /* STICKY CALL */
+  .sticky-call {
+    display: block;
+    position: fixed;
+    bottom: 10px;
+    left: 14px;
+    right: 14px;
+    z-index: 99;
+    background: var(--gold);
+    color: #000;
+    text-align: center;
+    padding: 11px 16px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+  }
 }
-```
 
   </style>
 </head>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de confidentialité | Taxi RF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --gold: #C9A84C; --gold-light: #E2C97E; --black: #0A0A0A; --dark: #111111; --dark2: #181818; --white: #F4F0E8; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--black); color: var(--white); font-family: 'Raleway', sans-serif; font-weight: 400; overflow-x: hidden; }
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px 48px; background: rgba(10,10,10,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(201,168,76,0.2); }
+    .logo { display: flex; align-items: center; gap: 13px; text-decoration: none; }
+    .logo-icon { width: 40px; height: 40px; object-fit: contain; }
+    .logo-name { font-size: 1.05rem; font-weight: 700; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
+    .logo-sub { display: block; font-size: 0.56rem; font-weight: 400; letter-spacing: 0.18em; color: var(--white); opacity: 0.45; text-transform: uppercase; margin-top: 2px; }
+    nav { display: flex; align-items: center; gap: 26px; }
+    nav a { color: var(--white); text-decoration: none; font-size: 0.73rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; transition: opacity 0.2s, color 0.2s; }
+    nav a:hover { opacity: 1; color: var(--gold); }
+    .btn-call { display: flex; align-items: center; gap: 7px; background: var(--gold); color: #000; text-decoration: none; padding: 10px 18px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 23px; height: 1.5px; background: var(--gold); }
+    .mobile-nav { display: none; position: fixed; inset: 0; background: rgba(10,10,10,0.98); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 30px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 1.3rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); text-decoration: none; opacity: 0.7; }
+    .mobile-close { position: absolute; top: 22px; right: 26px; background: none; border: none; color: var(--gold); font-size: 1.5rem; cursor: pointer; }
+    .hero { padding: 120px 48px 48px; background: var(--black); border-bottom: 1px solid rgba(201,168,76,0.1); }
+    .sec-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); opacity: 0.75; margin-bottom: 10px; }
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 300; margin-bottom: 10px; }
+    .hero h1 strong { font-weight: 700; color: var(--gold); }
+    .hero p { font-size: 0.82rem; opacity: 0.42; }
+    .content { max-width: 800px; margin: 0 auto; padding: 56px 48px; }
+    .content h2 { font-size: 1.1rem; font-weight: 700; color: var(--gold); margin: 36px 0 14px; }
+    .content h2:first-child { margin-top: 0; }
+    .content p { font-size: 0.86rem; line-height: 1.9; opacity: 0.65; margin-bottom: 12px; }
+    .content ul { margin: 10px 0 12px 20px; }
+    .content ul li { font-size: 0.86rem; line-height: 1.9; opacity: 0.65; margin-bottom: 4px; }
+    .content a { color: var(--gold); }
+    .gold-bar { width: 38px; height: 1px; background: var(--gold); opacity: 0.45; margin: 14px 0 28px; }
+    .legal-links { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 48px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .legal-links a { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); text-decoration: none; opacity: 0.6; transition: opacity 0.2s; }
+    .legal-links a:hover { opacity: 1; }
+    footer { background: #060606; border-top: 1px solid rgba(201,168,76,0.1); padding: 36px 48px 24px; }
+    .footer-bottom { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; font-size: 0.68rem; opacity: 0.28; }
+    @media (max-width: 920px) {
+      nav { display: none; } .btn-call { display: none; } .hamburger { display: flex; }
+      header { padding: 15px 22px; } .hero { padding: 90px 22px 36px; }
+      .content { padding: 40px 22px; } footer { padding: 28px 22px 20px; }
+      .footer-bottom { flex-direction: column; gap: 6px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <a href="/" class="logo">
+    <img src="logo.png" alt="Logo Taxi RF" class="logo-icon" />
+    <div><div class="logo-name">TAXI RF</div><span class="logo-sub">Taxi &amp; Chauffeur Privé</span></div>
+  </a>
+  <nav>
+    <a href="/">Accueil</a><a href="/taxi.html">Taxi</a><a href="/vtc.html">VTC</a>
+    <a href="/tarifs.html">Tarifs</a><a href="/reservation.html">Réservation</a><a href="/contact.html">Contact</a>
+  </nav>
+  <a href="tel:+33605717711" class="btn-call">06 05 71 77 11</a>
+  <div class="hamburger" onclick="document.getElementById('mn').classList.toggle('open')"><span></span><span></span><span></span></div>
+</header>
+<div class="mobile-nav" id="mn">
+  <button class="mobile-close" onclick="document.getElementById('mn').classList.remove('open')">✕</button>
+  <a href="/">Accueil</a><a href="/taxi.html">Taxi</a><a href="/vtc.html">VTC</a>
+  <a href="/tarifs.html">Tarifs</a><a href="/reservation.html">Réservation</a><a href="/contact.html">Contact</a>
+</div>
+
+<div class="hero">
+  <p class="sec-label">Documents légaux</p>
+  <h1>Politique de <strong>confidentialité</strong></h1>
+  <div class="gold-bar"></div>
+  <p>Dernière mise à jour : 15 février 2026</p>
+</div>
+
+<div class="content">
+
+  <h2>1. Identité du responsable du traitement</h2>
+  <p>Taxi RF — Société par Actions Simplifiée Unipersonnelle (SASU)</p>
+  <p>Capital social : 1 000 €<br>
+  Président : Fouad Rouag<br>
+  Siège social : 75 rue Rosa Bonheur, 60170 Ribécourt-Dreslincourt, France<br>
+  SIRET : 901 235 432 — Code NACE : 49.32Z<br>
+  Téléphone : 06 05 71 77 11<br>
+  Email : <a href="mailto:contact@taxirf.com">contact@taxirf.com</a></p>
+
+  <h2>2. Données personnelles collectées</h2>
+  <p>Dans le cadre de son activité, Taxi RF collecte les données suivantes :</p>
+  <ul>
+    <li>Nom et prénom</li>
+    <li>Numéro de téléphone</li>
+    <li>Adresse email</li>
+    <li>Adresse de prise en charge et de destination</li>
+    <li>Informations relatives à la réservation (date, heure, nombre de passagers)</li>
+    <li>Données de facturation et de paiement (via Stripe)</li>
+    <li>Messages envoyés via formulaire ou WhatsApp</li>
+  </ul>
+  <p>Des données techniques peuvent également être collectées automatiquement : adresse IP, type d'appareil et navigateur, données de navigation, cookies.</p>
+
+  <h2>3. Finalité de la collecte</h2>
+  <ul>
+    <li>Gestion et traitement des réservations de taxi et VTC</li>
+    <li>Réponse aux demandes de devis</li>
+    <li>Communication avec le client</li>
+    <li>Facturation et obligations comptables</li>
+    <li>Traitement des paiements en ligne via Stripe</li>
+    <li>Amélioration des services</li>
+  </ul>
+
+  <h2>4. Base légale du traitement</h2>
+  <ul>
+    <li>Exécution d'un contrat (réservation de transport)</li>
+    <li>Respect d'obligations légales (facturation, comptabilité)</li>
+    <li>Consentement de l'utilisateur (cookies)</li>
+  </ul>
+
+  <h2>5. Durée de conservation</h2>
+  <ul>
+    <li>Données clients : 3 ans après le dernier contact</li>
+    <li>Données de facturation : 10 ans (obligation légale)</li>
+    <li>Données de paiement Stripe : selon la politique de Stripe</li>
+    <li>Cookies : selon la durée définie par les outils utilisés</li>
+  </ul>
+
+  <h2>6. Partage des données</h2>
+  <p>Les données ne sont jamais vendues ni cédées à des tiers. Elles peuvent être partagées uniquement avec :</p>
+  <ul>
+    <li>Vercel Inc. — hébergeur du site (San Francisco, USA)</li>
+    <li>Stripe Inc. — prestataire de paiement sécurisé</li>
+    <li>Supabase — base de données des réservations</li>
+    <li>Resend — service d'envoi d'emails</li>
+    <li>Les services Google (Analytics le cas échéant)</li>
+    <li>Les autorités légales si requis</li>
+  </ul>
+
+  <h2>7. Hébergement du site</h2>
+  <p>Le site est hébergé par :<br>
+  Vercel Inc. — 340 Pine Street, Suite 701, San Francisco, CA 94104, USA<br>
+  <a href="https://vercel.com" target="_blank">vercel.com</a></p>
+
+  <h2>8. Paiements en ligne</h2>
+  <p>Les paiements en ligne sont traités par Stripe Inc., prestataire certifié PCI-DSS. Taxi RF ne stocke aucune donnée de carte bancaire. Les informations de paiement sont transmises directement et de manière sécurisée à Stripe.<br>
+  Pour plus d'informations : <a href="https://stripe.com/fr/privacy" target="_blank">stripe.com/fr/privacy</a></p>
+
+  <h2>9. Cookies</h2>
+  <p>Le site utilise des cookies pour assurer le bon fonctionnement du site et mesurer l'audience. L'utilisateur peut accepter, refuser ou paramétrer les cookies via la bannière prévue à cet effet.</p>
+
+  <h2>10. Droits des utilisateurs</h2>
+  <p>Conformément au RGPD, vous disposez des droits suivants : accès, rectification, effacement, opposition, limitation du traitement, portabilité.</p>
+  <p>Pour exercer vos droits : <a href="mailto:contact@taxirf.com">contact@taxirf.com</a> — Réponse sous 30 jours.</p>
+
+  <h2>11. Réclamations</h2>
+  <p>En cas de litige, vous pouvez introduire une réclamation auprès de la CNIL : <a href="https://www.cnil.fr" target="_blank">www.cnil.fr</a></p>
+
+  <div class="legal-links">
+    <a href="/mentions-legales.html">Mentions légales</a>
+    <a href="/cgv.html">Conditions générales de vente</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+</div>
+
+<footer style="background:#060606;border-top:1px solid rgba(201,168,76,0.1);padding:24px 48px;">
+  <div style="max-width:1060px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:0.68rem;opacity:0.4;">
+    <span>© 2026 Taxi RF — Tous droits réservés</span>
+    <div style="display:flex;gap:16px;">
+      <a href="/politique-confidentialite.html" style="color:var(--white);text-decoration:none;">Politique de confidentialité</a>
+      <a href="/mentions-legales.html" style="color:var(--white);text-decoration:none;">Mentions légales</a>
+      <a href="/cgv.html" style="color:var(--white);text-decoration:none;">CGV</a>
+    </div>
+    <a href="/" style="color:var(--gold);text-decoration:none;">← Retour au site</a>
+  </div>
+</footer>
+</body>
+</html>

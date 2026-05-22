@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Taxi RF — Disponible 24h/24 7j/7 pour vos réservations taxi et VTC dans l'Oise. Compiègne, Noyon, Pierrefonds vers Paris, CDG, Orly, Beauvais et gares parisiennes." />
+  <title>Contact Taxi & VTC dans l'Oise | Taxi RF — Compiègne, Noyon, Pierrefonds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --gold: #C9A84C; --gold-light: #E2C97E; --black: #0A0A0A; --dark: #111111; --dark2: #181818; --white: #F4F0E8; --green: #25D366; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Raleway', sans-serif; font-weight: 400; overflow-x: hidden; }
+
+    /* HEADER */
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px 48px; background: rgba(10,10,10,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(201,168,76,0.2); }
+    .logo { display: flex; align-items: center; gap: 13px; text-decoration: none; }
+    .logo-icon { width: 40px; height: 40px; object-fit: contain; }
+    .logo-name { font-size: 1.05rem; font-weight: 700; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
+    .logo-sub { display: block; font-size: 0.56rem; font-weight: 400; letter-spacing: 0.18em; color: var(--white); opacity: 0.45; text-transform: uppercase; margin-top: 2px; }
+    nav { display: flex; align-items: center; gap: 26px; }
+    nav a { color: var(--white); text-decoration: none; font-size: 0.73rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; transition: opacity 0.2s, color 0.2s; }
+    nav a:hover, nav a.active { opacity: 1; color: var(--gold); }
+    .btn-call { display: flex; align-items: center; gap: 7px; background: var(--gold); color: #000; text-decoration: none; padding: 10px 18px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: background 0.2s; white-space: nowrap; }
+    .btn-call:hover { background: var(--gold-light); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 23px; height: 1.5px; background: var(--gold); }
+
+    /* MOBILE NAV */
+    .mobile-nav { display: none; position: fixed; inset: 0; background: rgba(10,10,10,0.98); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 30px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 1.3rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); text-decoration: none; opacity: 0.7; transition: color 0.2s, opacity 0.2s; }
+    .mobile-nav a:hover { color: var(--gold); opacity: 1; }
+    .mobile-close { position: absolute; top: 22px; right: 26px; background: none; border: none; color: var(--gold); font-size: 1.5rem; cursor: pointer; }
+
+    /* HERO */
+    .hero-simple { padding: 110px 48px 48px; text-align: center; background: var(--black); border-bottom: 1px solid rgba(201,168,76,0.1); }
+    .sec-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); opacity: 0.75; margin-bottom: 10px; }
+    .hero-simple h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 300; line-height: 1.15; margin-bottom: 14px; }
+    .hero-simple h1 strong { font-weight: 700; color: var(--gold); }
+    .hero-simple p { font-size: 0.86rem; opacity: 0.45; max-width: 520px; margin: 0 auto; line-height: 1.8; }
+
+    /* MAIN */
+    .main { padding: 56px 48px; }
+    .wrap { max-width: 1060px; margin: 0 auto; }
+    .gold-bar { width: 38px; height: 1px; background: var(--gold); opacity: 0.45; margin: 18px 0; }
+    .sec-title { font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 300; line-height: 1.2; margin-bottom: 14px; }
+    .sec-title strong { font-weight: 700; color: var(--gold); }
+
+    /* CONTACT GRID */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2px; }
+    .contact-card { background: var(--dark2); padding: 36px 30px; display: flex; flex-direction: column; align-items: flex-start; position: relative; overflow: hidden; transition: background 0.3s; }
+    .contact-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.35s; }
+    .contact-card:hover { background: #1C1C1C; }
+    .contact-card:hover::after { transform: scaleX(1); }
+    .contact-card-icon { width: 32px; height: 32px; color: var(--gold); margin-bottom: 16px; }
+    .contact-card-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+    .contact-card-desc { font-size: 0.78rem; opacity: 0.45; line-height: 1.7; margin-bottom: 20px; flex: 1; }
+    .contact-card-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 10px 20px; transition: all 0.2s; }
+    .contact-card-link.gold { background: var(--gold); color: #000; }
+    .contact-card-link.gold:hover { background: var(--gold-light); }
+    .contact-card-link.wa { background: rgba(37,211,102,0.85); color: #fff; }
+    .contact-card-link.wa:hover { background: var(--green); }
+    .contact-card-link.wa svg { width: 15px; height: 15px; fill: white; }
+    .contact-card-link.outline { border: 1px solid rgba(201,168,76,0.35); color: var(--gold); }
+    .contact-card-link.outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.06); }
+
+    /* FORM SECTION */
+    .form-wrap { display: flex; justify-content: center; margin-top: 56px; }
+    .form-box { background: var(--dark2); padding: 36px; width: 100%; max-width: 680px; }
+    .form-title { font-size: 0.85rem; font-weight: 700; color: var(--gold); letter-spacing: 0.05em; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid rgba(201,168,76,0.15); }
+    .form-field { margin-bottom: 14px; }
+    .form-field label { display: block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.5; margin-bottom: 6px; }
+    .form-field input, .form-field select, .form-field textarea { width: 100%; background: var(--dark); border: 1px solid rgba(201,168,76,0.15); color: var(--white); padding: 10px 12px; font-size: 0.83rem; font-family: 'Raleway', sans-serif; outline: none; transition: border-color 0.2s; appearance: none; }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--gold); }
+    .form-field select { background-color: var(--dark); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C9A84C' stroke-width='2'%3E%3Cpolyline points='6,9 12,15 18,9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px; cursor: pointer; color: var(--white); }
+    .form-field select option { background: #181818; color: var(--white); }
+    .form-field textarea { resize: vertical; min-height: 110px; }
+    .btn-submit { width: 100%; background: var(--gold); color: #000; border: none; padding: 13px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-family: 'Raleway', sans-serif; transition: background 0.2s; margin-top: 6px; }
+    .btn-submit:hover { background: var(--gold-light); }
+
+    /* SUCCESS */
+    .success-msg { display: none; background: rgba(37,211,102,0.06); border: 1px solid rgba(37,211,102,0.25); padding: 20px; text-align: center; margin-top: 16px; }
+    .success-msg.show { display: block; }
+    .success-msg svg { width: 32px; height: 32px; color: var(--green); margin: 0 auto 10px; display: block; }
+    .success-msg p { font-size: 0.8rem; opacity: 0.6; line-height: 1.6; }
+
+    /* INFOS SIDEBAR */
+    .infos-box { display: flex; flex-direction: column; gap: 14px; }
+    .info-card { background: var(--dark2); padding: 24px; }
+    .info-card-title { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); opacity: 0.65; margin-bottom: 16px; }
+    .info-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+    .info-row:last-child { margin-bottom: 0; }
+    .info-icon { width: 17px; height: 17px; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+    .info-text strong { display: block; font-size: 0.76rem; font-weight: 700; margin-bottom: 2px; }
+    .info-text span { font-size: 0.73rem; opacity: 0.45; line-height: 1.5; }
+
+    /* AVIS GOOGLE */
+    .avis-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: #000; text-decoration: none; padding: 10px 16px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; transition: background 0.2s; white-space: nowrap; }
+    .avis-btn:hover { background: var(--gold-light); }
+
+    /* RESEAUX */
+    .reseaux { background: var(--dark); padding: 48px; text-align: center; }
+    .reseaux-links { display: flex; gap: 12px; justify-content: center; margin-top: 24px; flex-wrap: wrap; align-items: center; }
+    .reseau-link { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(201,168,76,0.25); color: var(--gold); text-decoration: none; padding: 10px 16px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; transition: all 0.2s; white-space: nowrap; }
+    .reseau-link:hover { border-color: var(--gold); background: rgba(201,168,76,0.06); }
+    /* FOOTER */
+    footer { background: #060606; border-top: 1px solid rgba(201,168,76,0.1); padding: 36px 48px 24px; }
+    .footer-wrap { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 20px; }
+    .footer-brand-name { font-size: 0.95rem; font-weight: 700; color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase; }
+    .footer-brand-sub { font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.38; margin-top: 3px; margin-bottom: 12px; }
+    .footer-brand p { font-size: 0.76rem; line-height: 1.8; opacity: 0.38; max-width: 250px; }
+    .footer-socials { display: flex; gap: 16px; margin-top: 14px; }
+    .footer-socials a { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); text-decoration: none; opacity: 0.38; transition: opacity 0.2s, color 0.2s; }
+    .footer-socials a:hover { opacity: 1; color: var(--gold); }
+    .footer-col h4 { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); opacity: 0.65; margin-bottom: 14px; }
+    .footer-col a { display: block; color: var(--white); text-decoration: none; font-size: 0.76rem; opacity: 0.38; margin-bottom: 8px; transition: opacity 0.2s; }
+    .footer-col a:hover { opacity: 0.85; }
+    .footer-bottom { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; font-size: 0.68rem; opacity: 0.28; }
+
+    /* WHATSAPP */
+    .whatsapp-btn { position: fixed; bottom: 80px; right: 20px; z-index: 98; width: 52px; height: 52px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(37,211,102,0.35); transition: transform 0.2s; text-decoration: none; }
+    .whatsapp-btn:hover { transform: scale(1.08); }
+    .whatsapp-btn svg { width: 28px; height: 28px; fill: white; }
+
+    /* STICKY */
+    .sticky-call { display: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 920px) {
+      nav { display: none; }
+      .btn-call { display: none; }
+      .hamburger { display: flex; }
+      header { padding: 15px 22px; }
+      .hero-simple { padding: 90px 22px 36px; }
+      .main { padding: 36px 22px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2px; }
+      .form-wrap { grid-template-columns: 1fr; gap: 24px; margin-top: 36px; }
+      .form-box { padding: 24px 18px; }
+      .reseaux { padding: 40px 22px; }
+      footer { padding: 36px 22px 20px; }
+      .footer-wrap { grid-template-columns: 1fr; gap: 24px; padding-bottom: 22px; }
+      .footer-bottom { flex-direction: column; gap: 6px; text-align: center; }
+      .whatsapp-btn { bottom: 76px; right: 14px; width: 46px; height: 46px; }
+      .whatsapp-btn svg { width: 24px; height: 24px; }
+
+      .sticky-call {
+        display: block;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 32px);
+        max-width: 500px;
+        bottom: 14px;
+        z-index: 99;
+        background: var(--gold);
+        color: #000;
+        text-align: center;
+        padding: 10px 16px;
+        font-size: 0.70rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 6px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+      body { padding-bottom: 52px; }
+    }
+
+    .footer-legal { display: flex; align-items: center; gap: 10px; }
+    .footer-legal a { color: var(--white); text-decoration: none; font-size: 0.68rem; opacity: 0.28; transition: opacity 0.2s; }
+    .footer-legal a:hover { opacity: 0.7; }
+    .footer-legal span { opacity: 0.18; font-size: 0.68rem; }
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJM3GRQ7QD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZJM3GRQ7QD');
+  </script>
+  <!-- Google Maps API -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPgCsTjcx84bFd7WvD4ogy3i7QnNutqtA&libraries=places&callback=initGoogleReviews"></script>
+  <script>
+    function initGoogleReviews() {
+      var service = new google.maps.places.PlacesService(document.createElement('div'));
+      service.findPlaceFromText({
+        query: 'Taxi RF Ribécourt-Dreslincourt',
+        fields: ['rating', 'user_ratings_total', 'place_id'],
+        locationBias: { lat: 49.4121941, lng: 2.4273078 }
+      }, function(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK && results[0]) {
+          var rating = results[0].rating;
+          var total = results[0].user_ratings_total;
+          document.querySelectorAll('.google-rating').forEach(function(el) {
+            el.textContent = rating ? rating.toFixed(1) + '/5' : '';
+          });
+          document.querySelectorAll('.google-reviews-count').forEach(function(el) {
+            el.textContent = total ? total + ' avis' : '';
+          });
+          document.querySelectorAll('.google-reviews-full').forEach(function(el) {
+            el.textContent = total ? (rating.toFixed(1) + '/5 — ' + total + ' avis Google') : '';
+          });
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="/" class="logo">
+    <img src="logo.png" alt="Logo Taxi RF" class="logo-icon" />
+    <div>
+      <div class="logo-name">TAXI RF</div>
+      <span class="logo-sub">Taxi &amp; Chauffeur Privé</span>
+    </div>
+  </a>
+  <nav>
+    <a href="/">Accueil</a>
+    <a href="/taxi.html">Taxi</a>
+    <a href="/vtc.html">VTC</a>
+    <a href="/tarifs.html">Tarifs</a>
+    <a href="/reservation.html">Réservation</a>
+    <a href="/contact.html" class="active">Contact</a>
+  </nav>
+  <a href="tel:+33605717711" class="btn-call">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+    06 05 71 77 11
+  </a>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="/" onclick="toggleMenu()">Accueil</a>
+  <a href="/taxi.html" onclick="toggleMenu()">Taxi</a>
+  <a href="/vtc.html" onclick="toggleMenu()">VTC</a>
+  <a href="/tarifs.html" onclick="toggleMenu()">Tarifs</a>
+  <a href="/reservation.html" onclick="toggleMenu()">Réservation</a>
+  <a href="/contact.html" onclick="toggleMenu()">Contact</a>
+  <a href="tel:+33605717711" style="color:var(--gold);opacity:1;">06 05 71 77 11</a>
+</div>
+
+<!-- HERO -->
+<div class="hero-simple">
+  <p class="sec-label">Nous contacter</p>
+  <h1>Contact <strong>Taxi &amp; VTC</strong></h1>
+  <p>Taxi RF est disponible 24h/24 — 7j/7 depuis Compiègne, Noyon, Pierrefonds et Ribécourt. Transferts CDG, Orly, Beauvais et gares parisiennes. Taxi, VTC, Van sur réservation.</p>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="wrap">
+
+    <!-- 4 CARTES CONTACT -->
+    <div class="contact-grid">
+      <div class="contact-card">
+        <svg class="contact-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div class="contact-card-title">Téléphone</div>
+        <p class="contact-card-desc">Appelez directement pour une réservation rapide ou une question urgente. Disponible 24h/24 — 7j/7.</p>
+        <a href="tel:+33605717711" class="contact-card-link gold">06 05 71 77 11</a>
+      </div>
+
+      <div class="contact-card">
+        <svg class="contact-card-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        <div class="contact-card-title">WhatsApp</div>
+        <p class="contact-card-desc">Devis rapide, demande spécifique ou trajet longue distance. Réponse en quelques minutes.</p>
+        <a href="https://wa.me/33605717711" target="_blank" class="contact-card-link wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          Envoyer un message
+        </a>
+      </div>
+
+      <div class="contact-card">
+        <svg class="contact-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div class="contact-card-title">Email</div>
+        <p class="contact-card-desc">Devis groupes, Van, ou toute question administrative. Réponse sous 24h.</p>
+        <a href="mailto:infos@taxirf.com" class="contact-card-link outline">infos@taxirf.com</a>
+      </div>
+
+      <div class="contact-card">
+        <svg class="contact-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <div class="contact-card-title">Réservation en ligne</div>
+        <p class="contact-card-desc">Réservez en ligne avec paiement sécurisé Stripe. Confirmation immédiate par email.</p>
+        <a href="/reservation.html" class="contact-card-link gold">Réserver maintenant</a>
+      </div>
+    </div>
+
+    <!-- FORMULAIRE + INFOS -->
+    <div class="form-wrap">
+      <div class="form-box">
+        <div class="form-title">Formulaire de contact &amp; devis</div>
+        <div class="form-field">
+          <label>Nom complet *</label>
+          <input type="text" id="c_nom" placeholder="Votre nom" required />
+        </div>
+        <div class="form-field">
+          <label>Téléphone *</label>
+          <input type="tel" id="c_tel" placeholder="+33 6 XX XX XX XX" required />
+        </div>
+        <div class="form-field">
+          <label>Email *</label>
+          <input type="email" id="c_email" placeholder="votre@email.com" required />
+        </div>
+        <div class="form-field">
+          <label>Votre demande</label>
+          <select id="c_objet">
+            <option value="">Choisir...</option>
+            <option value="taxi">Réservation Taxi</option>
+            <option value="vtc">Réservation VTC</option>
+            <option value="van">Van / Groupe</option>
+            <option value="devis">Devis</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Message *</label>
+          <textarea id="c_message" placeholder="Décrivez votre trajet, vos dates, vos besoins..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="sendContact()">Envoyer le message</button>
+        <div class="success-msg" id="contactSuccess">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
+          <p>Message envoyé ! Nous vous répondrons rapidement par téléphone ou email.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RESEAUX -->
+<section class="reseaux">
+  <div class="wrap">
+    <p class="sec-label">Suivez-nous</p>
+    <h2 class="sec-title">Retrouvez <strong>Taxi RF</strong></h2>
+    <div class="reseaux-links">
+      <a href="https://www.instagram.com/taxi_rf_fouad_" target="_blank" class="reseau-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+      <a href="https://facebook.com/taxirf.fouad" target="_blank" class="reseau-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+      <a href="https://wa.me/33605717711" target="_blank" class="reseau-link" style="color:#25D366;border-color:rgba(37,211,102,0.3);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://g.page/r/CcpAITPBBTT0EBE/review" target="_blank" class="avis-btn">
+        ★ Laisser un avis Google — <span class="google-reviews-full">7 avis 5/5</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script>
+  fetch('/footer.html')
+    .then(r => r.text())
+    .then(html => { document.getElementById('footer-placeholder').innerHTML = html; });
+</script>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/33605717711" target="_blank" class="whatsapp-btn">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<!-- STICKY CALL MOBILE -->
+<a href="tel:+33605717711" class="sticky-call">Appeler : 06 05 71 77 11</a>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+
+  function sendContact() {
+    const nom = document.getElementById('c_nom').value;
+    const tel = document.getElementById('c_tel').value;
+    const email = document.getElementById('c_email').value;
+    const message = document.getElementById('c_message').value;
+    if (!nom || !tel || !email || !message) {
+      alert('Veuillez remplir tous les champs obligatoires.');
+      return;
+    }
+    document.getElementById('contactSuccess').classList.add('show');
+    document.getElementById('c_nom').value = '';
+    document.getElementById('c_tel').value = '';
+    document.getElementById('c_email').value = '';
+    document.getElementById('c_objet').value = '';
+    document.getElementById('c_message').value = '';
+  }
+
+  // Sticky call
+  window.addEventListener('scroll', function() {
+    var s = document.querySelector('.sticky-call');
+    if (!s) return;
+    var f = document.querySelector('footer');
+    if (!f) return;
+    if (f.getBoundingClientRect().top < window.innerHeight * 1.5) {
+      s.style.opacity = '1'; s.style.pointerEvents = 'auto';
+    } else {
+      s.style.opacity = '0'; s.style.pointerEvents = 'none';
+    }
+  });
+</script>
+</body>
+</html>

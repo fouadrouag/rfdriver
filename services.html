@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RF Driver — Services de transport sur réservation dans l'Oise. Chauffeur privé, transferts aéroports, événements, tourisme, transport de groupe et remise en main propre." />
+  <meta name="keywords" content="chauffeur privé Oise, transfert aéroport Compiègne, transport groupe Oise, livraison documents Oise, tourisme Compiègne Pierrefonds, VTC événement Oise" />
+  <title>Nos services de transport sur réservation | RF Driver — Oise & Île-de-France</title>
+  <link rel="canonical" href="https://www.rfdriver.fr/services.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TaxiService",
+      "name": "RF Driver",
+      "telephone": "+33 6 05 71 77 11",
+      "url": "https://www.rfdriver.fr",
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Oise"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Île-de-France"
+        }
+      ]
+    }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJM3GRQ7QD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZJM3GRQ7QD');</script>
+  <style>
+    :root{--gold:#C9A84C;--gold-light:#E2C97E;--black:#0A0A0A;--dark:#111111;--dark2:#181818;--white:#F4F0E8;}
+    *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+    body{background:var(--black);color:var(--white);font-family:'Raleway',sans-serif;font-weight:400;overflow-x:hidden;}
+
+    /* HEADER */
+    header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:13px 48px;background:rgba(10,10,10,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,0.15);}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .logo img{height:42px;width:auto;}
+    nav{display:flex;align-items:center;gap:24px;}
+    nav a{color:var(--white);text-decoration:none;font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;opacity:0.6;transition:opacity 0.2s,color 0.2s;}
+    nav a:hover,nav a.active{opacity:1;color:var(--gold);}
+    .btn-call{display:flex;align-items:center;gap:7px;background:var(--gold);color:#000;text-decoration:none;padding:9px 18px;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;}
+    .btn-call:hover{background:var(--gold-light);}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+    .hamburger span{display:block;width:23px;height:1.5px;background:var(--gold);}
+    .header-right{display:flex;align-items:center;gap:14px;}
+    .lang-switch{display:flex;align-items:center;gap:8px;}
+    .lang-switch a{font-size:1.1rem;text-decoration:none;opacity:0.5;transition:opacity 0.2s;}
+    .lang-switch a:hover,.lang-switch a.lang-active{opacity:1;}
+    @media(min-width:1024px){.header-right{display:none;}}
+    .mobile-nav{display:none;position:fixed;inset:0;background:rgba(10,10,10,0.98);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+    .mobile-nav.open{display:flex;}
+    .mobile-nav a{font-size:1.2rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);text-decoration:none;opacity:0.7;}
+    .mobile-nav a:hover{color:var(--gold);opacity:1;}
+    .mobile-close{position:absolute;top:22px;right:26px;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:pointer;}
+
+    /* HERO */
+    .hero{position:relative;height:75vh;min-height:500px;display:flex;align-items:center;overflow:hidden;}
+    .hero-bg{position:absolute;inset:0;background:linear-gradient(to right,rgba(20,43,50,0.62) 0%,rgba(20,43,50,0.52) 34%,rgba(20,43,50,0.12) 52%,rgba(20,43,50,0) 70%),url('hero-services.jpg') center/cover no-repeat;filter:brightness(1.16) saturate(1.03);}
+    .hero-content{position:relative;z-index:2;padding:0 80px;max-width:580px;}
+    .sec-label{font-size:0.6rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);opacity:0.75;margin-bottom:12px;}
+    .hero h1{font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:var(--gold);line-height:1.2;margin-bottom:18px;}
+    .hero-sub{font-size:0.9rem;opacity:0.55;line-height:1.8;max-width:460px;}
+    .gold-bar{width:38px;height:1px;background:var(--gold);opacity:0.45;margin:18px 0;}
+    @media(min-width:1024px){.hero-content{text-shadow:0 2px 12px rgba(0,0,0,0.55);}}
+
+    /* SERVICES SECTION */
+    .services-section{padding:72px 48px;background:var(--black);}
+    .services-intro{text-align:center;margin-bottom:56px;}
+    .services-intro h2{font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:300;opacity:0.5;}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:1060px;margin:0 auto;}
+    .service-card{background:var(--dark2);position:relative;overflow:hidden;transition:background 0.3s;display:flex;flex-direction:column;}
+    .service-card::after{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.35s;}
+    .service-card:hover{background:#1a1a1a;}
+    .service-card:hover::after{transform:scaleX(1);}
+    .service-img{height:200px;background-size:cover;background-repeat:no-repeat;flex-shrink:0;}.service-body{padding:28px 28px;}.service-body h3{font-size:1rem;font-weight:700;margin-bottom:12px;}.service-body ul{list-style:none;padding:0;}.service-body ul li{font-size:0.8rem;opacity:0.5;line-height:2;display:flex;align-items:center;gap:8px;}.service-body ul li::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;opacity:0.7;}
+
+    /* SERVICE & PROCESS */
+    .service-process{padding:72px 48px;background:var(--black);}
+    .service-process-wrap{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,0.92fr);max-width:1060px;margin:0 auto;}
+    .service-process-copy{padding-right:56px;}
+    .service-process-steps{padding-left:56px;border-left:1px solid rgba(201,168,76,0.5);}
+    .service-process h2{font-size:clamp(1.45rem,2.5vw,2rem);font-weight:300;line-height:1.3;margin-bottom:24px;}
+    .service-process-copy p{font-size:0.88rem;line-height:1.9;margin-bottom:18px;}
+    .service-process-copy p:last-child{margin-bottom:0;}
+    .process-step{display:grid;grid-template-columns:38px 1fr;gap:14px;padding:0 0 24px;}
+    .process-step:last-child{padding-bottom:0;}
+    .process-number{color:var(--gold);font-size:0.72rem;font-weight:700;letter-spacing:0.12em;padding-top:3px;}
+    .process-step h3{font-size:0.94rem;font-weight:700;margin-bottom:7px;}
+    .process-step p{font-size:0.82rem;line-height:1.75;}
+
+    /* DESTINATIONS */
+    .destinations{padding:72px 48px;background:var(--dark);}
+    .destinations-wrap{max-width:1060px;margin:0 auto;}
+    .destinations h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:300;line-height:1.2;margin-bottom:14px;}
+    .destinations h2 strong{font-weight:700;color:var(--gold);}
+    .destinations p{font-size:0.9rem;opacity:0.6;line-height:2;max-width:780px;margin-top:24px;}
+
+    /* CTA */
+    .cta{padding:72px 48px;background:var(--dark2);text-align:center;}
+    .cta-wrap{max-width:700px;margin:0 auto;}
+    .cta h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:300;margin-bottom:12px;}
+    .cta h2 strong{font-weight:700;color:var(--gold);}
+    .cta p{font-size:0.86rem;opacity:0.45;margin-bottom:32px;line-height:1.7;}
+    .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#000;text-decoration:none;padding:13px 26px;font-size:0.76rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border-radius:6px;transition:background 0.2s;}
+    .btn-primary:hover{background:var(--gold-light);}
+    .btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);text-decoration:none;padding:12px 24px;font-size:0.76rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border-radius:6px;border:1px solid rgba(255,255,255,0.25);transition:all 0.2s;}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+    .btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;text-decoration:none;padding:13px 24px;font-size:0.76rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border-radius:6px;transition:background 0.2s;}
+    .btn-wa:hover{background:#20b858;}
+    .btn-wa svg{width:15px;height:15px;fill:white;}
+
+    /* FOOTER */
+    footer{background:#060606;border-top:1px solid rgba(201,168,76,0.1);padding:36px 48px 24px;}
+    .footer-wrap{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.05);margin-bottom:20px;}
+    .footer-brand-name{font-size:0.95rem;font-weight:700;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;}
+    .footer-brand-sub{font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.38;margin-top:3px;margin-bottom:12px;}
+    .footer-brand p{font-size:0.74rem;line-height:1.8;opacity:0.38;max-width:240px;}
+    .footer-socials{display:flex;gap:16px;margin-top:14px;}
+    .footer-socials a{font-size:0.66rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--white);text-decoration:none;opacity:0.38;transition:opacity 0.2s,color 0.2s;}
+    .footer-socials a:hover{opacity:1;color:var(--gold);}
+    .footer-col h4{font-size:0.58rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);opacity:0.65;margin-bottom:14px;}
+    .footer-col a{display:block;color:var(--white);text-decoration:none;font-size:0.76rem;opacity:0.38;margin-bottom:8px;transition:opacity 0.2s;}
+    .footer-col a:hover{opacity:0.85;}
+    .footer-bottom{max-width:1060px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;font-size:0.68rem;opacity:0.28;flex-wrap:wrap;gap:8px;}
+    .footer-legal{display:flex;align-items:center;gap:10px;}
+    .footer-legal a{color:var(--white);text-decoration:none;font-size:0.68rem;opacity:0.28;transition:opacity 0.2s;}
+    .footer-legal a:hover{opacity:0.7;}
+    .footer-legal span{opacity:0.18;font-size:0.68rem;}
+    .whatsapp-btn{position:fixed;bottom:70px;right:20px;z-index:98;width:48px;height:48px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(37,211,102,0.35);transition:transform 0.2s;text-decoration:none;}
+    .whatsapp-btn:hover{transform:scale(1.08);}
+    .whatsapp-btn svg{width:25px;height:25px;fill:white;}
+    .sticky-call{display:none;}
+
+    /* RESPONSIVE */
+    @media(max-width:1023px){
+      header{padding:13px 22px;}nav{display:none;}.btn-call{display:none;}.hamburger{display:flex;}
+      .hero{height:100svh;align-items:flex-end;margin-top:-70px;}
+      .hero-bg{top:0!important;height:100%!important;background:linear-gradient(to top,rgba(20,43,50,0.48) 15%,rgba(20,43,50,0) 54%),url('hero-services-mobile.jpg') center top/cover no-repeat;filter:brightness(1.18) saturate(1.03);}
+      header > div[style]{display:none!important;}
+      .hero-content{padding:0 26px 60px;max-width:100%;}#hero-sub-mobile{display:block!important;}#hero-sub-desktop{display:none!important;}
+      .hero h1{font-size:clamp(1.8rem,6vw,2.4rem);}
+      .services-section{padding:48px 22px;}
+      .services-grid{grid-template-columns:1fr;gap:2px;}
+      .service-process{padding:48px 22px;}
+      .service-process-wrap{grid-template-columns:1fr;}
+      .service-process-copy{padding-right:0;padding-bottom:38px;}
+      .service-process-steps{padding-left:0;padding-top:38px;border-left:0;border-top:1px solid rgba(201,168,76,0.5);}
+      .service-process h2{font-size:1.5rem;}
+      .destinations{padding:48px 22px;}
+      .cta{padding:48px 22px;}
+      .cta-btns{flex-direction:column;align-items:center;}
+      .btn-primary,.btn-outline,.btn-wa{width:100%;max-width:300px;justify-content:center;}
+      footer{padding:36px 22px 110px;}
+      .footer-wrap{grid-template-columns:1fr;gap:24px;padding-bottom:22px;}
+      .footer-bottom{flex-direction:column;gap:6px;text-align:center;}
+      .whatsapp-btn{bottom:76px;right:14px;width:46px;height:46px;}
+      .sticky-call{display:block;position:fixed;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:500px;bottom:14px;z-index:99;background:var(--gold);color:#000;text-align:center;padding:10px 16px;font-size:0.70rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,0.35);opacity:0;pointer-events:none;transition:opacity 0.3s ease;}
+      html,body{background:#263238;}
+      body{padding-bottom:0;padding-top:0;}
+    }
+
+    /* PALETTE EQUILIBREE - VERSION DE TEST */
+    :root{
+      --black:#E3E8E9;
+      --dark:#F4F6F6;
+      --dark2:#FFFFFF;
+      --white:#263238;
+    }
+    body{background:#E3E8E9;color:#263238;}
+    header{background:rgba(38,50,56,0.97);border-bottom-color:rgba(201,168,76,0.28);}
+    nav a{color:#FFFFFF;}
+    nav a:hover,nav a.active{color:var(--gold);}
+    .mobile-nav{background:rgba(38,50,56,0.99);}
+    .mobile-nav a{color:#FFFFFF;}
+    .hero-content{color:#FFFFFF;}
+    .hero-sub{color:#FFFFFF;opacity:0.82;}
+    .services-section{background:#E3E8E9;}
+    .service-card{background:#FFFFFF;}
+    .service-card:hover{background:#F9FAFA;}
+    .service-body h3{color:#263238;}
+    .service-body ul li{color:#667579;opacity:1;}
+    .service-process{background:#E3E8E9;}
+    .service-process h2,.process-step h3{color:#263238;}
+    .service-process-copy p,.process-step p{color:#667579;}
+    .destinations{background:#F4F6F6;}
+    .destinations h2{color:#263238;}
+    .destinations p{color:#667579;opacity:1;}
+    .cta{background:#FFFFFF;}
+    .cta h2{color:#263238;}
+    .cta p{color:#667579;opacity:1;}
+    .btn-outline{color:#263238;border-color:rgba(38,50,56,0.45);}
+    .btn-outline:hover{color:var(--gold);border-color:var(--gold);}
+    footer{background:#263238;border-top-color:rgba(201,168,76,0.22);}
+    .footer-brand-sub,.footer-brand p{color:#D2D9DB;opacity:0.72;}
+    .footer-socials a,.footer-col a,.footer-legal a{color:#FFFFFF;opacity:0.68;}
+    .footer-bottom{color:#D2D9DB;opacity:0.62;}
+    @media(max-width:1023px){
+      html,body,#footer-placeholder{background:#263238!important;}
+      body{padding-bottom:0!important;}
+      footer{padding-bottom:max(110px,calc(90px + env(safe-area-inset-bottom)));}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo"><img src="logo.png" alt="RF Driver" /></a>
+  <nav>
+    <a href="/">Accueil</a>
+    <a href="/services.html" class="active">Services</a>
+    <a href="/vtc.html">Chauffeur priv&eacute;</a>
+    <a href="/reservation.html">R&eacute;servation</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+  <div style="display:flex;align-items:center;gap:16px;"><div style="display:flex;align-items:center;gap:6px;"><a href="#" title="Français" style="font-size:1.1rem;text-decoration:none;opacity:0.6;">🇫🇷</a><a href="#" title="English" style="font-size:1.1rem;text-decoration:none;opacity:0.4;">🇬🇧</a></div><a href="tel:+33605717711" class="btn-call">06 05 71 77 11</a></div>
+  <div class="header-right"><div class="lang-switch"><a href="#" class="lang-active" title="Français">🇫🇷</a><a href="#" title="English">🇬🇧</a></div><div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div></div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" onclick="toggleMenu()">&#x2715;</button>
+  <a href="/" onclick="toggleMenu()">Accueil</a>
+  <a href="/services.html" onclick="toggleMenu()">Services</a>
+  <a href="/vtc.html" onclick="toggleMenu()">Chauffeur priv&eacute;</a>
+  <a href="/reservation.html" onclick="toggleMenu()">R&eacute;servation</a>
+  <a href="/contact.html" onclick="toggleMenu()">Contact</a>
+  <a href="tel:+33605717711" style="color:var(--gold);opacity:1;">06 05 71 77 11</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <h1>Nos services de transport<br>sur r&eacute;servation</h1>
+    <div class="gold-bar"></div>
+    <p class="hero-sub" id="hero-sub-mobile" style="display:none;">Particuliers &amp; professionnels. Transferts a&eacute;roports, &eacute;v&eacute;nements, tourisme et transport s&eacute;curis&eacute;.</p><p class="hero-sub" id="hero-sub-desktop">RF Driver accompagne particuliers et professionnels pour leurs d&eacute;placements, transferts a&eacute;roports, &eacute;v&eacute;nements, tourisme, transport de groupe et remise en main propre de documents et objets importants.</p>
+  </div>
+</section>
+
+<!-- NOS SERVICES -->
+<section class="services-section">
+  <div class="services-intro">
+    <p class="sec-label">Nos services</p>
+  </div>
+  <div class="services-grid">
+
+    <!-- 1 -->
+    <div class="service-card">
+      <div class="service-img" style="background-image:url('service-chauffeur.jpg');background-position:center;"></div>
+      <div class="service-body">
+        <h3>Chauffeur priv&eacute; &amp; d&eacute;placements professionnels</h3>
+        <ul>
+          <li>Rendez-vous professionnels</li>
+          <li>Entreprises &amp; s&eacute;minaires</li>
+          <li>H&ocirc;tels &amp; restaurants</li>
+          <li>Mise &agrave; disposition</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="service-card">
+      <div class="service-img" style="background-image:url('service-aeroport.jpg');background-position:center;"></div>
+      <div class="service-body">
+        <h3>Transferts a&eacute;roports &amp; gares</h3>
+        <ul>
+          <li>CDG &middot; Orly &middot; Beauvais</li>
+          <li>Gares parisiennes</li>
+          <li>Accueil avec pancarte</li>
+          <li>Suivi des vols en temps r&eacute;el</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="service-card">
+      <div class="service-img" style="background-image:url('service-evenement.jpg');background-position:center;"></div>
+      <div class="service-body">
+        <h3>Soir&eacute;es priv&eacute;es &amp; &eacute;v&eacute;nements</h3>
+        <ul>
+          <li>Soir&eacute;es priv&eacute;es</li>
+          <li>Anniversaires &amp; r&eacute;ceptions</li>
+          <li>&Eacute;v&eacute;nements professionnels</li>
+          <li>Sorties sur r&eacute;servation</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="service-card">
+      <div class="service-img" style="background-image:url('service-tourisme.jpg');background-position:center top;"></div>
+      <div class="service-body">
+        <h3>Tourisme &amp; loisirs</h3>
+        <ul>
+          <li>Excursions priv&eacute;es avec chauffeur</li>
+          <li>Ch&acirc;teaux &amp; patrimoine</li>
+          <li>Disneyland Paris</li>
+          <li>Journ&eacute;es d&eacute;couverte</li>
+          <li>Mise &agrave; disposition &agrave; la demi-journ&eacute;e ou journ&eacute;e</li>
+          <li>Programme sur mesure</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="service-card">
+      <div class="service-img" style="background-image:url('service-groupe.jpg');background-position:center;"></div>
+      <div class="service-body">
+        <h3>Transport de groupe</h3>
+        <ul>
+          <li>Berline &amp; van disponibles</li>
+          <li>Familles &amp; groupes</li>
+          <li>D&eacute;placements entreprises</li>
+          <li>Bagages volumineux</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="service-card">
+      <div class="service-img" style="background-image:url('service-transport-securise.jpg');background-position:center;"></div>
+      <div class="service-body">
+        <h3>Remise en main propre &amp; transport s&eacute;curis&eacute;</h3>
+        <ul>
+          <li>Documents urgents &amp; contrats</li>
+          <li>Cl&eacute;s &amp; objets importants</li>
+          <li>Remise en main propre</li>
+          <li>Suivi en temps r&eacute;el selon prestation</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICE & PROCESS -->
+<section class="service-process">
+  <div class="service-process-wrap">
+    <div class="service-process-copy">
+      <p class="sec-label">Notre accompagnement</p>
+      <h2>Un service adapt&eacute; &agrave; chaque d&eacute;placement</h2>
+      <p>RF Driver accompagne les particuliers et les professionnels pour leurs d&eacute;placements sur r&eacute;servation dans l&apos;Oise (Compi&egrave;gne, Noyon, Senlis, Chantilly et Pierrefonds), vers Paris, les a&eacute;roports, les gares et les longues distances. Nous proposons des solutions adapt&eacute;es pour les transferts a&eacute;roports, les rendez-vous professionnels, les &eacute;v&eacute;nements priv&eacute;s, les excursions, les transports de groupe ainsi que les remises en main propre de documents sensibles.</p>
+      <p>Chaque trajet est organis&eacute; avec soin afin de vous garantir ponctualit&eacute;, confort et tranquillit&eacute;. Berline ou van selon vos besoins, nous &eacute;tudions chaque demande pour vous proposer une solution simple, fiable et adapt&eacute;e &agrave; votre d&eacute;placement.</p>
+    </div>
+
+    <div class="service-process-steps">
+      <p class="sec-label">Votre r&eacute;servation</p>
+      <h2>Comment se d&eacute;roule votre trajet&nbsp;?</h2>
+
+      <div class="process-step">
+        <span class="process-number">01</span>
+        <div>
+          <h3>Demande de r&eacute;servation</h3>
+          <p>Indiquez votre trajet, votre date et vos besoins via notre formulaire de r&eacute;servation ou par t&eacute;l&eacute;phone.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <span class="process-number">02</span>
+        <div>
+          <h3>Confirmation</h3>
+          <p>Nous validons votre demande et vous communiquons les informations n&eacute;cessaires avant le d&eacute;part.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <span class="process-number">03</span>
+        <div>
+          <h3>Prise en charge</h3>
+          <p>Votre chauffeur vous accueille &agrave; l&apos;heure convenue et assure votre transport dans les meilleures conditions de confort et de s&eacute;curit&eacute;.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section class="destinations">
+  <div class="destinations-wrap">
+    <p class="sec-label">Zones desservies</p>
+    <h2>Destinations <strong>fr&eacute;quentes</strong></h2>
+    <div class="gold-bar"></div>
+    <p>RF Driver accompagne particuliers et professionnels au d&eacute;part de Compi&egrave;gne, Noyon, Pierrefonds, Rib&eacute;court-Dreslincourt, Chantilly et de l&apos;ensemble de l&apos;Oise. Nous r&eacute;alisons des transferts vers Paris, les a&eacute;roports CDG, Orly et Beauvais, les gares parisiennes, Disneyland Paris ainsi que de nombreuses destinations en France et en Belgique. Chaque trajet est &eacute;tudi&eacute; individuellement afin de proposer une solution adapt&eacute;e &agrave; vos besoins.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-wrap">
+    <p class="sec-label">Passons &agrave; l&apos;action</p>
+    <h2>Pr&ecirc;t &agrave; <strong>partir&nbsp;?</strong></h2>
+    <p>R&eacute;servez en ligne, contactez-nous directement ou demandez un devis sur WhatsApp. R&eacute;ponse rapide garantie.</p>
+    <div class="cta-btns">
+      <a href="/reservation.html" class="btn-primary">R&eacute;server un trajet</a>
+      <a href="/contact.html" class="btn-outline">Nous contacter</a>
+      <a href="https://wa.me/33605717711" target="_blank" class="btn-wa">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        Demander un devis
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+<script>fetch('/footer.html').then(r=>r.text()).then(html=>{document.getElementById('footer-placeholder').innerHTML=html;});</script>
+
+<a href="https://wa.me/33605717711" target="_blank" class="whatsapp-btn">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+<a href="tel:+33605717711" class="sticky-call">Appeler : 06 05 71 77 11</a>
+
+<script>
+  function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}
+  window.addEventListener('scroll',function(){
+    var s=document.querySelector('.sticky-call');if(!s)return;
+    var f=document.getElementById('footer-placeholder');if(!f)return;
+    if(f.getBoundingClientRect().top<window.innerHeight*1.5){s.style.opacity='1';s.style.pointerEvents='auto';}
+    else{s.style.opacity='0';s.style.pointerEvents='none';}
+  });
+</script>
+</body>
+</html>

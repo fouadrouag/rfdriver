@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Réservez votre chauffeur privé RF Driver en ligne. Calculez votre trajet, choisissez votre véhicule et confirmez votre réservation dans l'Oise, à Paris et partout en France." />
+  <title>Réservation en ligne | Chauffeur privé RF Driver</title>
+  <link rel="canonical" href="https://rfdriver.fr/reservation.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="RF Driver" />
+  <meta property="og:title" content="Réservation en ligne | RF Driver" />
+  <meta property="og:description" content="Réservez votre chauffeur privé en ligne dans l'Oise, à Paris et partout en France. Calcul instantané, paiement sécurisé." />
+  <meta property="og:image" content="https://rfdriver.fr/hero-accueil-desktop.jpg" />
+  <meta property="og:url" content="https://rfdriver.fr/reservation.html" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJM3GRQ7QD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZJM3GRQ7QD');</script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPgCsTjcx84bFd7WvD4ogy3i7QnNutqtA&libraries=places&callback=initAutocomplete"></script>
+
+  <style>
+    :root { --gold:#C9A84C; --gold-light:#E2C97E; --bg:#E3E8E9; --bg2:#D6DDE0; --dark:#263238; --dark2:#37474F; --white:#FFFFFF; --border:rgba(38,50,56,0.12); }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; overflow-x:hidden; }
+    body { background:#263238; color:var(--dark); font-family:'Raleway',sans-serif; overflow-x:hidden; max-width:100%; }
+    img, table { max-width:100%; }
+    header { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:13px 48px; background:var(--dark); backdrop-filter:blur(10px); border-bottom:1px solid rgba(201,168,76,0.2); }
+    .logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+    .logo img { height:42px; width:auto; }
+    nav { display:flex; align-items:center; gap:24px; }
+    nav a { color:#F4F0E8; text-decoration:none; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; opacity:0.6; }
+    nav a:hover, nav a.active { opacity:1; color:var(--gold); }
+    .header-right { display:flex; align-items:center; gap:16px; }
+    .flags { display:flex; align-items:center; gap:6px; }
+    .flags a { font-size:1.1rem; text-decoration:none; opacity:0.5; }
+    .btn-call { display:flex; align-items:center; gap:7px; background:var(--gold); color:#000; text-decoration:none; padding:9px 18px; font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; white-space:nowrap; }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
+    .hamburger span { display:block; width:23px; height:1.5px; background:var(--gold); }
+    .mobile-nav { display:none; position:fixed; inset:0; background:rgba(38,50,56,0.98); z-index:200; flex-direction:column; align-items:center; justify-content:center; gap:28px; }
+    .mobile-nav.open { display:flex; }
+    .mobile-nav a { font-size:1.2rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:#F4F0E8; text-decoration:none; opacity:0.7; }
+    .mobile-close { position:absolute; top:22px; right:26px; background:none; border:none; color:var(--gold); font-size:1.5rem; cursor:pointer; }
+    .header-right-mobile { display:none; align-items:center; gap:10px; }
+    .header-right-mobile .flags { display:flex; align-items:center; gap:6px; }
+    .header-right-mobile .flags a { font-size:1.1rem; text-decoration:none; opacity:0.6; }
+    .wrap { max-width:1060px; margin:0 auto; }
+    .sec-label { font-size:0.6rem; font-weight:700; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+    .gold-bar { width:38px; height:2px; background:var(--gold); margin:16px 0; }
+    .btn-primary { display:inline-flex; align-items:center; gap:8px; background:var(--gold); color:#000; text-decoration:none; padding:13px 26px; font-size:0.76rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; border-radius:6px; border:none; cursor:pointer; font-family:'Raleway',sans-serif; }
+    .btn-primary:hover { background:var(--gold-light); }
+    .btn-primary:disabled { opacity:0.5; cursor:not-allowed; }
+    .btn-outline { display:inline-flex; align-items:center; gap:8px; background:transparent; color:var(--dark); text-decoration:none; padding:12px 24px; font-size:0.76rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; border-radius:6px; border:1.5px solid var(--dark2); }
+    .btn-outline:hover { border-color:var(--gold); color:var(--gold); }
+    .hero { padding:130px 48px 40px; background:var(--bg); }
+    .hero-wrap { max-width:1060px; margin:0 auto; }
+    .hero h1 { font-size:clamp(2rem,4vw,3.2rem); font-weight:700; color:var(--dark); line-height:1.15; margin-bottom:12px; }
+    .hero-txt { font-size:0.95rem; color:var(--dark2); line-height:1.8; max-width:640px; margin-bottom:12px; }
+    .hero-link { display:inline-flex; align-items:center; gap:6px; font-size:0.78rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); text-decoration:none; }
+    .calculateur { padding:40px 48px 56px; background:var(--bg); }
+    .calc-wrap { max-width:780px; margin:0 auto; background:var(--white); padding:32px; border-radius:8px; border-top:3px solid var(--gold); }
+    .calc-title { font-size:1.2rem; font-weight:700; color:var(--dark); margin-bottom:8px; }
+    .calc-sub { font-size:0.84rem; color:var(--dark2); opacity:0.7; margin-bottom:24px; }
+    .calc-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+    .calc-field { display:flex; flex-direction:column; gap:6px; }
+    .calc-field label { font-size:0.65rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--dark); opacity:0.55; }
+    .calc-field input, .calc-field select { width:100%; padding:11px 14px; border:1.5px solid var(--border); background:var(--bg); color:var(--dark); font-family:'Raleway',sans-serif; font-size:0.85rem; outline:none; border-radius:4px; }
+    .calc-field input:focus, .calc-field select:focus { border-color:var(--gold); }
+    .calc-field select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23263238' stroke-width='2'%3E%3Cpolyline points='6,9 12,15 18,9'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; padding-right:36px; cursor:pointer; }
+    .calc-result { background:var(--bg); border:2px solid var(--gold); border-radius:6px; padding:20px 24px; margin:20px 0; display:none; }
+    .calc-result.show { display:block; }
+    .calc-result-label { font-size:0.62rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--dark); opacity:0.5; margin-bottom:6px; }
+    .calc-result-price { font-size:2.2rem; font-weight:700; color:var(--gold); line-height:1; }
+    .calc-result-detail { font-size:0.78rem; color:var(--dark2); opacity:0.6; margin-top:4px; }
+    .resa-section { padding:8px 48px 56px; background:var(--bg); display:none; }
+    .resa-section.show { display:block; }
+    .resa-wrap { max-width:780px; margin:0 auto; background:var(--white); padding:32px; border-radius:8px; }
+    .resa-recap { background:var(--bg); border-left:3px solid var(--gold); padding:16px 18px; border-radius:4px; margin-bottom:24px; }
+    .resa-recap strong { display:block; font-size:0.7rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+    .resa-recap-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px 16px; font-size:0.82rem; color:var(--dark2); }
+    .resa-recap-grid span { font-weight:700; color:var(--dark); }
+    .resa-title { font-size:1.2rem; font-weight:700; color:var(--dark); margin-bottom:20px; }
+    .resa-form { display:flex; flex-direction:column; gap:14px; }
+    .resa-grid2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .resa-field { display:flex; flex-direction:column; gap:6px; }
+    .resa-field label { font-size:0.65rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--dark); opacity:0.55; }
+    .resa-field input, .resa-field select, .resa-field textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); background:var(--bg); color:var(--dark); font-family:'Raleway',sans-serif; font-size:0.85rem; outline:none; border-radius:4px; }
+    .resa-field input:focus, .resa-field select:focus, .resa-field textarea:focus { border-color:var(--gold); }
+    .resa-field textarea { resize:vertical; min-height:70px; }
+    .payment-choice { display:flex; flex-direction:column; gap:10px; margin-top:12px; }
+    .payment-option { display:flex; align-items:flex-start; gap:12px; padding:14px 16px; border:1.5px solid var(--border); border-radius:6px; cursor:pointer; }
+    .payment-option:hover, .payment-option.selected { border-color:var(--gold); }
+    .payment-option input { margin-top:3px; accent-color:var(--gold); width:16px; height:16px; flex-shrink:0; }
+    .payment-option-label { font-size:0.86rem; font-weight:700; color:var(--dark); }
+    .payment-option-sub { font-size:0.76rem; color:var(--dark2); opacity:0.65; margin-top:3px; line-height:1.5; }
+    .btn-confirm { width:100%; margin-top:8px; padding:15px; font-size:0.82rem; }
+    .avis-bar { padding:20px 48px; background:var(--white); display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .avis-stars { color:var(--gold); font-size:1rem; letter-spacing:2px; }
+    .avis-bar strong { font-size:0.86rem; color:var(--dark); }
+    .avis-bar span { font-size:0.8rem; color:var(--dark2); opacity:0.6; }
+    .avis-bar a { font-size:0.78rem; font-weight:700; color:var(--gold); text-decoration:none; margin-left:6px; }
+    .faq { padding:56px 48px; background:var(--bg); }
+    .faq h2 { font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:var(--dark); margin-bottom:8px; }
+    .faq-list { margin-top:32px; max-width:780px; }
+    .faq-item { border-bottom:1px solid var(--border); padding:18px 0; cursor:pointer; }
+    .faq-question { font-size:0.9rem; font-weight:600; color:var(--dark); display:flex; justify-content:space-between; align-items:center; gap:16px; margin:0; }
+    .faq-question span { color:var(--gold); font-size:1.1rem; flex-shrink:0; }
+    .faq-answer { font-size:0.84rem; color:var(--dark2); opacity:0.7; line-height:1.8; margin-top:10px; display:none; }
+    .faq-item.open .faq-answer { display:block; }
+    .faq-item.open .faq-question span { transform:rotate(45deg); }
+    .cta-final { padding:72px 48px; background:var(--dark); text-align:center; }
+    .cta-final h2 { font-size:clamp(1.5rem,3vw,2.2rem); font-weight:300; color:#F4F0E8; margin-bottom:12px; }
+    .cta-final h2 strong { font-weight:700; color:var(--gold); }
+    .cta-final p { font-size:0.86rem; color:#F4F0E8; opacity:0.45; margin-bottom:28px; }
+    .cta-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .cta-btns .btn-primary { background:var(--gold); color:#000; }
+    .cta-btns .btn-outline { color:#F4F0E8; border-color:rgba(244,240,232,0.3); }
+    #footer-placeholder { max-width:100%; overflow-x:hidden; background:#263238; }
+    footer { background:#1A2328; border-top:1px solid rgba(201,168,76,0.1); padding:36px 48px 24px; }
+    .footer-wrap { max-width:1060px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr; gap:48px; padding-bottom:28px; border-bottom:1px solid rgba(255,255,255,0.05); margin-bottom:20px; }
+    .footer-brand-name { font-size:0.95rem; font-weight:700; color:var(--gold); letter-spacing:0.14em; text-transform:uppercase; }
+    .footer-brand-sub { font-size:0.56rem; letter-spacing:0.2em; text-transform:uppercase; color:#F4F0E8; opacity:0.38; margin-top:3px; margin-bottom:12px; }
+    .footer-brand p { font-size:0.74rem; line-height:1.8; color:#F4F0E8; opacity:0.38; max-width:240px; }
+    .footer-socials { display:flex; gap:16px; margin-top:14px; }
+    .footer-socials a { font-size:0.66rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#F4F0E8; text-decoration:none; opacity:0.38; }
+    .footer-col h4 { font-size:0.58rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); opacity:0.65; margin-bottom:14px; }
+    .footer-col a { display:block; color:#F4F0E8; text-decoration:none; font-size:0.76rem; opacity:0.38; margin-bottom:8px; }
+    .footer-bottom { max-width:1060px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; font-size:0.68rem; color:#F4F0E8; opacity:0.28; flex-wrap:wrap; gap:8px; }
+    .footer-legal { display:flex; align-items:center; gap:10px; }
+    .footer-legal a { color:#F4F0E8; text-decoration:none; font-size:0.68rem; opacity:0.28; }
+    .footer-legal span { opacity:0.18; }
+    .whatsapp-btn { position:fixed; bottom:70px; right:20px; z-index:98; width:48px; height:48px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 14px rgba(37,211,102,0.35); text-decoration:none; }
+    .whatsapp-btn svg { width:25px; height:25px; fill:white; }
+    .success-msg { position:fixed; top:90px; left:50%; transform:translateX(-50%); background:var(--dark); color:#F4F0E8; padding:16px 28px; border-radius:8px; border:1px solid var(--gold); z-index:9999; font-size:0.86rem; text-align:center; max-width:90%; }
+    @media(max-width:1023px) {
+      header { padding:13px 22px; } nav { display:none; } .btn-call { display:none; } .flags { display:none; } .hamburger { display:flex; } .header-right-mobile { display:flex; }
+      .hero { padding:90px 22px 32px; } .calculateur { padding:24px 22px 40px; } .calc-wrap { padding:22px; } .calc-grid { grid-template-columns:1fr; }
+      .resa-section { padding:8px 22px 40px; } .resa-wrap { padding:22px; } .resa-grid2 { grid-template-columns:1fr; } .resa-recap-grid { grid-template-columns:1fr; }
+      .avis-bar { padding:16px 22px; } .faq { padding:48px 22px; } .cta-final { padding:56px 22px; } .cta-btns { flex-direction:column; align-items:center; }
+      footer { padding:36px 22px 20px; } .footer-wrap { grid-template-columns:1fr; gap:24px; padding-bottom:22px; } .footer-bottom { flex-direction:column; gap:6px; text-align:center; }
+      .whatsapp-btn { bottom:20px; right:14px; width:46px; height:46px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo"><img src="logo.png" alt="RF Driver — Chauffeur Privé Oise" /></a>
+  <nav>
+    <a href="/">Accueil</a>
+    <a href="/services.html">Services</a>
+    <a href="/vtc.html">Chauffeur priv&eacute;</a>
+    <a href="/reservation.html" class="active">R&eacute;servation</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+  <div class="header-right">
+    <div class="flags"><a href="#" title="Fran&ccedil;ais">&#127467;&#127479;</a><a href="#" title="English">&#127468;&#127463;</a></div>
+    <a href="tel:+33605717711" class="btn-call">06 05 71 77 11</a>
+  </div>
+  <div class="header-right-mobile">
+    <div class="flags"><a href="#" title="Fran&ccedil;ais">&#127467;&#127479;</a><a href="#" title="English">&#127468;&#127463;</a></div>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" onclick="toggleMenu()">&#x2715;</button>
+  <a href="/" onclick="toggleMenu()">Accueil</a>
+  <a href="/services.html" onclick="toggleMenu()">Services</a>
+  <a href="/vtc.html" onclick="toggleMenu()">Chauffeur priv&eacute;</a>
+  <a href="/reservation.html" onclick="toggleMenu()">R&eacute;servation</a>
+  <a href="/contact.html" onclick="toggleMenu()">Contact</a>
+  <a href="tel:+33605717711" style="color:var(--gold);opacity:1;">06 05 71 77 11</a>
+</div>
+
+<section class="hero">
+  <div class="hero-wrap">
+    <p class="sec-label">RF Driver — R&eacute;servation</p>
+    <h1>R&eacute;servez votre trajet</h1>
+    <div class="gold-bar"></div>
+    <p class="hero-txt">Calculez votre trajet, choisissez votre v&eacute;hicule et confirmez votre r&eacute;servation en quelques minutes. Confirmation imm&eacute;diate, paiement s&eacute;curis&eacute;.</p>
+    <a href="/vtc.html#calculateur" class="hero-link">Voir nos tarifs et forfaits &rarr;</a>
+  </div>
+</section>
+
+<section class="calculateur" id="calculateur">
+  <div class="calc-wrap">
+    <p class="sec-label">&Eacute;tape 1</p>
+    <h2 class="calc-title">Calculez votre trajet</h2>
+    <p class="calc-sub">Entrez vos adresses, choisissez votre v&eacute;hicule et obtenez votre prix instantan&eacute;ment.</p>
+    <div class="calc-grid">
+      <div class="calc-field"><label>Adresse de d&eacute;part *</label><input type="text" id="calc-depart" placeholder="Ex: Compi&egrave;gne, Oise" /></div>
+      <div class="calc-field"><label>Adresse d&apos;arriv&eacute;e *</label><input type="text" id="calc-arrivee" placeholder="Ex: Terminal 2E CDG" /></div>
+    </div>
+    <div class="calc-grid">
+      <div class="calc-field"><label>V&eacute;hicule *</label>
+        <select id="calc-vehicule" onchange="updateAttenteDisplay()">
+          <option value="eco">&Eacute;co</option><option value="berline">Berline</option><option value="van">Van Classe V</option>
+        </select>
+      </div>
+      <div class="calc-field"><label>Type de trajet *</label>
+        <select id="calc-type"><option value="simple">Aller simple</option><option value="aller-retour">Aller-retour</option></select>
+      </div>
+    </div>
+    <div class="calc-grid">
+      <div class="calc-field"><label>Temps d&apos;attente (optionnel)</label>
+        <select id="calc-attente" onchange="updateAttenteDisplay()">
+          <option value="0">Aucune attente</option><option value="5">5 min</option><option value="10">10 min</option><option value="15">15 min</option>
+          <option value="30">30 min</option><option value="45">45 min</option><option value="60">1 heure</option><option value="90">1h30</option><option value="120">2 heures</option>
+        </select>
+      </div>
+      <div class="calc-field"></div>
+    </div>
+    <button class="btn-primary" onclick="calculerTrajet()">Calculer le prix</button>
+    <div class="calc-result" id="calc-result">
+      <div class="calc-result-label">Prix estim&eacute;</div>
+      <div class="calc-result-price" id="calc-price">— €</div>
+      <div class="calc-result-detail" id="calc-detail"></div>
+      <div id="calc-airport-msg" style="display:none;background:#FFF8E1;border-left:3px solid var(--gold);padding:12px 16px;border-radius:4px;margin-top:14px;font-size:0.82rem;color:var(--dark);font-weight:600;">&#9992;&#65039; 30 minutes d&apos;attente offertes &agrave; partir de l&apos;heure de prise en charge indiqu&eacute;e.</div>
+    </div>
+  </div>
+</section>
+
+<section class="resa-section" id="resa-section">
+  <div class="resa-wrap">
+    <p class="sec-label">&Eacute;tape 2</p>
+    <h2 class="resa-title">Vos informations</h2>
+    <div class="resa-recap">
+      <strong>R&eacute;capitulatif de votre trajet</strong>
+      <div class="resa-recap-grid">
+        <div>D&eacute;part : <span id="rf-depart">—</span></div>
+        <div>Arriv&eacute;e : <span id="rf-arrivee">—</span></div>
+        <div>V&eacute;hicule : <span id="rf-vehicule">—</span></div>
+        <div>Type : <span id="rf-type">—</span></div>
+        <div>Prix estim&eacute; : <span id="rf-prix">—</span></div>
+      </div>
+    </div>
+    <form class="resa-form" id="resaForm">
+      <div class="resa-grid2">
+        <div class="resa-field"><label>Nom *</label><input type="text" id="nom" placeholder="Votre nom" required /></div>
+        <div class="resa-field"><label>Pr&eacute;nom *</label><input type="text" id="prenom" placeholder="Votre pr&eacute;nom" required /></div>
+      </div>
+      <div class="resa-grid2">
+        <div class="resa-field"><label>T&eacute;l&eacute;phone *</label><input type="tel" id="tel" placeholder="06 XX XX XX XX" required /></div>
+        <div class="resa-field"><label>Email *</label><input type="email" id="email" placeholder="votre@email.com" required /></div>
+      </div>
+      <div class="resa-grid2">
+        <div class="resa-field"><label>Date du trajet *</label><input type="date" id="date" required /></div>
+        <div class="resa-field"><label>Heure de prise en charge *</label><input type="time" id="heure" required /></div>
+      </div>
+      <div class="resa-grid2">
+        <div class="resa-field"><label>Nombre de passagers</label>
+          <select id="passagers"><option value="1">1 passager</option><option value="2">2 passagers</option><option value="3">3 passagers</option><option value="4">4 passagers</option><option value="5">5 passagers</option><option value="6">6 passagers</option><option value="7">7 passagers</option></select>
+        </div>
+        <div class="resa-field"><label>Bagages</label>
+          <select id="bagages"><option value="non">Sans bagage</option><option value="cabine">Bagage cabine</option><option value="soute">Bagage soute</option><option value="multiple">Plusieurs bagages</option></select>
+        </div>
+      </div>
+      <div class="resa-field"><label>Num&eacute;ro de vol (si applicable)</label><input type="text" id="vol" placeholder="Ex: AF1234" /></div>
+      <div class="resa-field"><label>Message (optionnel)</label><textarea id="message" placeholder="Informations compl&eacute;mentaires..."></textarea></div>
+      <div class="resa-field">
+        <label>Mode de paiement *</label>
+        <div class="payment-choice">
+          <label class="payment-option selected" onclick="selectPayment('ligne', this)">
+            <input type="radio" name="paiement" value="ligne" checked />
+            <div><div class="payment-option-label">Payer en ligne</div><div class="payment-option-sub">Paiement s&eacute;curis&eacute; par carte bancaire via Stripe. Confirmation imm&eacute;diate.</div></div>
+          </label>
+          <label class="payment-option" onclick="selectPayment('bord', this)">
+            <input type="radio" name="paiement" value="bord" />
+            <div><div class="payment-option-label">Payer &agrave; bord</div><div class="payment-option-sub">Les r&eacute;servations avec paiement en ligne sont trait&eacute;es en priorit&eacute;. Vous pouvez tout de m&ecirc;me choisir de r&eacute;gler directement aupr&egrave;s de votre chauffeur.</div></div>
+          </label>
+        </div>
+      </div>
+      <button type="button" class="btn-primary btn-confirm" id="btn-confirm" onclick="confirmerReservation()">Confirmer la r&eacute;servation</button>
+    </form>
+  </div>
+</section>
+
+<div class="avis-bar">
+  <span class="avis-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+  <strong class="google-rating">5/5</strong>
+  <span class="google-reviews-count">7 avis</span>
+  <span>v&eacute;rifi&eacute;s sur Google</span>
+  <a href="https://g.page/r/CcpAITPBBTT0EBE/review" target="_blank">Laisser un avis &rarr;</a>
+</div>
+
+<section class="faq">
+  <div class="wrap">
+    <p class="sec-label">Questions fr&eacute;quentes</p>
+    <h2>Tout ce que vous devez savoir</h2>
+    <div class="gold-bar"></div>
+    <div class="faq-list">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Comment r&eacute;server mon trajet ? <span>+</span></div>
+        <div class="faq-answer">Calculez votre trajet en haut de page, choisissez votre v&eacute;hicule, puis compl&eacute;tez vos informations et confirmez. Vous pouvez payer en ligne ou &agrave; bord, selon votre pr&eacute;f&eacute;rence.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Comment je re&ccedil;ois la confirmation ? <span>+</span></div>
+        <div class="faq-answer">Vous recevez un email de confirmation avec tous les d&eacute;tails de votre trajet — date, heure, adresse de prise en charge, v&eacute;hicule et montant. Une notification est &eacute;galement transmise &agrave; notre &eacute;quipe.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Comment se passe la prise en charge &agrave; l&apos;a&eacute;roport ? <span>+</span></div>
+        <div class="faq-answer">Votre chauffeur vous attend &agrave; la sortie du terminal avec une pancarte &agrave; votre nom. Le vol est suivi en temps r&eacute;el — en cas de retard, l&apos;heure d&apos;arriv&eacute;e du chauffeur est adapt&eacute;e automatiquement. 30 minutes d&apos;attente sont offertes &agrave; partir de l&apos;heure de prise en charge indiqu&eacute;e.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Quels modes de paiement sont accept&eacute;s ? <span>+</span></div>
+        <div class="faq-answer">Le paiement en ligne s&eacute;curis&eacute; par carte bancaire est possible via Stripe. Vous pouvez &eacute;galement choisir de r&eacute;gler directement aupr&egrave;s de votre chauffeur en carte ou esp&egrave;ces.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Quelle est la politique d&apos;annulation ? <span>+</span></div>
+        <div class="faq-answer">Annulation gratuite jusqu&apos;&agrave; 24h avant le d&eacute;part — remboursement int&eacute;gral. Entre 6h et 24h avant le d&eacute;part : remboursement de 50%. Moins de 6h avant le d&eacute;part : aucun remboursement.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">Puis-je modifier ma r&eacute;servation ? <span>+</span></div>
+        <div class="faq-answer">Oui, contactez-nous par t&eacute;l&eacute;phone ou WhatsApp d&egrave;s que possible pour modifier l&apos;horaire, l&apos;adresse ou le v&eacute;hicule de votre r&eacute;servation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap">
+    <p class="sec-label" style="color:var(--gold);">Besoin d&apos;aide&nbsp;?</p>
+    <h2>Contactez-<strong>nous</strong></h2>
+    <p>Notre &eacute;quipe est disponible 24h/24 — 7j/7 par t&eacute;l&eacute;phone ou WhatsApp.</p>
+    <div class="cta-btns">
+      <a href="tel:+33605717711" class="btn-primary">Appeler</a>
+      <a href="https://wa.me/33605717711" target="_blank" class="btn-outline">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script>fetch('/footer.html').then(r=>r.text()).then(html=>{document.getElementById('footer-placeholder').innerHTML=html;});</script>
+
+<a href="https://wa.me/33605717711" target="_blank" class="whatsapp-btn">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+  function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}
+  function toggleFaq(item){item.classList.toggle('open');}
+
+  const ATTENTE_MIN_LIST = { '0':0,'5':5,'10':10,'15':15,'30':30,'45':45,'60':60,'90':90,'120':120 };
+  const ATTENTE_LABELS = { '0':'Aucune attente','5':'5 min','10':'10 min','15':'15 min','30':'30 min','45':'45 min','60':'1 heure','90':'1h30','120':'2 heures' };
+  const ATTENTE_TARIF_HORAIRE = { 'eco':40,'berline':55,'van':55 };
+
+  function updateAttenteDisplay(){
+    const vehicule = document.getElementById('calc-vehicule').value;
+    const tarifHoraire = ATTENTE_TARIF_HORAIRE[vehicule];
+    const select = document.getElementById('calc-attente');
+    Array.from(select.options).forEach(function(opt){
+      const min = ATTENTE_MIN_LIST[opt.value];
+      if (min === 0) { opt.text = 'Aucune attente'; return; }
+      const prix = Math.round((min/60)*tarifHoraire*100)/100;
+      opt.text = ATTENTE_LABELS[opt.value] + ' — ' + prix.toFixed(2).replace('.00','') + '€';
+    });
+  }
+
+  const FORFAITS_OISE = {
+    'pierrefonds': { 'cdg':{'eco':85,'berline':95,'van':120}, 'orly':{'eco':145,'berline':165,'van':195}, 'beauvais':{'eco':110,'berline':125,'van':155}, 'disney':{'eco':125,'berline':140,'van':160} },
+    'compiegne': { 'cdg':{'eco':95,'berline':110,'van':140}, 'orly':{'eco':140,'berline':160,'van':180}, 'beauvais':{'eco':95,'berline':110,'van':140}, 'disney':{'eco':140,'berline':160,'van':180} },
+    'margny': { 'cdg':{'eco':95,'berline':110,'van':140}, 'orly':{'eco':140,'berline':160,'van':180}, 'beauvais':{'eco':95,'berline':110,'van':140}, 'disney':{'eco':140,'berline':160,'van':180} },
+    'thourotte': { 'cdg':{'eco':115,'berline':130,'van':160}, 'orly':{'eco':160,'berline':190,'van':230}, 'beauvais':{'eco':115,'berline':130,'van':160}, 'disney':{'eco':170,'berline':190,'van':220} },
+    'ribecourt': { 'cdg':{'eco':115,'berline':130,'van':160}, 'orly':{'eco':160,'berline':190,'van':230}, 'beauvais':{'eco':115,'berline':130,'van':160}, 'disney':{'eco':170,'berline':190,'van':220} },
+    'noyon': { 'cdg':{'eco':125,'berline':145,'van':180}, 'orly':{'eco':175,'berline':200,'van':240}, 'beauvais':{'eco':125,'berline':145,'van':180}, 'disney':{'eco':180,'berline':200,'van':230} }
+  };
+  const FORFAITS_PARIS = {
+    'paris-paris':{'eco':30,'berline':50,'van':60}, 'paris-orly':{'eco':40,'berline':60,'van':70}, 'paris-cdg':{'eco':50,'berline':70,'van':100},
+    'paris-disney':{'eco':65,'berline':80,'van':100}, 'orly-cdg':{'eco':70,'berline':85,'van':100}, 'orly-disney':{'eco':65,'berline':80,'van':100},
+    'cdg-disney':{'eco':60,'berline':75,'van':90}, 'paris-beauvais':{'eco':120,'berline':150,'van':180}
+  };
+  const TARIFS_KM = { 'eco':1.60,'berline':1.80,'van':2.20 };
+  const AIRPORT_KEYWORDS = ['cdg','charles de gaulle','roissy','tremblay','mesnil amelot','mesnil-amelot','terminal'];
+  const ORLY_KEYWORDS = ['orly'];
+  const BEAUVAIS_KEYWORDS = ['beauvais','tille','tillé'];
+  const GARE_KEYWORDS = ['gare du nord','gare de lyon','gare de l\'est','montparnasse','saint lazare','bercy'];
+  const PARIS_KEYWORDS = ['paris','750','île-de-france','ile-de-france'];
+  const IDF_DEPTS = ['75','77','78','91','92','93','94','95'];
+  const ATTENTE_MINUTES = { '0':0,'5':5,'10':10,'15':15,'30':30,'45':45,'60':60,'90':90,'120':120 };
+
+  function detectDestType(addr){ const a=addr.toLowerCase(); if(ORLY_KEYWORDS.some(k=>a.includes(k)))return'orly'; if(BEAUVAIS_KEYWORDS.some(k=>a.includes(k)))return'beauvais'; if(AIRPORT_KEYWORDS.some(k=>a.includes(k)))return'cdg'; if(GARE_KEYWORDS.some(k=>a.includes(k)))return'gare'; return'autre'; }
+  function detectDepartVille(addr){ const a=addr.toLowerCase(); if(a.includes('pierrefonds'))return'pierrefonds'; if(a.includes('margny'))return'margny'; if(a.includes('compi'))return'compiegne'; if(a.includes('thourotte'))return'thourotte'; if(a.includes('rib')||a.includes('dreslincourt'))return'ribecourt'; if(a.includes('noyon'))return'noyon'; return null; }
+  function isParisDepart(addr){ const a=addr.toLowerCase(); return PARIS_KEYWORDS.some(k=>a.includes(k)); }
+  function detectDepartement(addr){ const match=addr.match(/\b(\d{5})\b/); if(!match)return null; return match[1].substring(0,2); }
+
+  let lastCalc = {};
+
+  function initAutocomplete() {
+    const departInput = document.getElementById('calc-depart');
+    const arriveeInput = document.getElementById('calc-arrivee');
+    if (!departInput || !arriveeInput) return;
+    new google.maps.places.Autocomplete(departInput, {componentRestrictions:{country:'fr'}, fields:['formatted_address','geometry']});
+    new google.maps.places.Autocomplete(arriveeInput, {fields:['formatted_address','geometry']});
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('depart')) {
+      departInput.value = params.get('depart');
+      arriveeInput.value = params.get('arrivee') || '';
+      if (params.get('vehicule')) document.getElementById('calc-vehicule').value = params.get('vehicule');
+      if (params.get('type')) document.getElementById('calc-type').value = params.get('type');
+      updateAttenteDisplay();
+      if (params.get('prix')) { calculerTrajet(); }
+    }
+  }
+
+  function calculerTrajet() {
+    const depart = document.getElementById('calc-depart').value.trim();
+    const arrivee = document.getElementById('calc-arrivee').value.trim();
+    const vehicule = document.getElementById('calc-vehicule').value;
+    const type = document.getElementById('calc-type').value;
+    if (!depart || !arrivee) { alert('Veuillez remplir les deux adresses.'); return; }
+
+    const service = new google.maps.DistanceMatrixService();
+    service.getDistanceMatrix({ origins:[depart], destinations:[arrivee], travelMode:google.maps.TravelMode.DRIVING, unitSystem:google.maps.UnitSystem.METRIC }, function(response, status) {
+      if (status !== 'OK') { alert('Impossible de calculer la distance. Vérifiez les adresses.'); return; }
+      const element = response.rows[0].elements[0];
+      if (element.status !== 'OK') { alert('Adresse introuvable. Vérifiez les adresses.'); return; }
+      const distKm = element.distance.value / 1000;
+      const origin = new google.maps.DistanceMatrixService();
+      origin.getDistanceMatrix({ origins:['Ribécourt-Dreslincourt, France'], destinations:[depart], travelMode:google.maps.TravelMode.DRIVING, unitSystem:google.maps.UnitSystem.METRIC }, function(resp2, status2) {
+        let distApproche = 0;
+        if (status2 === 'OK' && resp2.rows[0].elements[0].status === 'OK') { distApproche = resp2.rows[0].elements[0].distance.value / 1000; }
+        afficherPrix(depart, arrivee, distKm, distApproche, vehicule, type);
+      });
+    });
+  }
+
+  function afficherPrix(depart, arrivee, distKm, distApproche, vehicule, type) {
+    const destType = detectDestType(arrivee);
+    const departVille = detectDepartVille(depart);
+    const departParis = isParisDepart(depart);
+    const departOrly = depart.toLowerCase().includes('orly');
+    const departCDG = AIRPORT_KEYWORDS.some(k=>depart.toLowerCase().includes(k));
+    const arriveeDisney = arrivee.toLowerCase().includes('disney');
+    let prix=0, detail='', isForfait=false, vanIndisponible=false;
+
+    let routeKey = null;
+    if (departParis && destType==='cdg') routeKey='paris-cdg';
+    else if (departParis && destType==='orly') routeKey='paris-orly';
+    else if (departParis && destType==='beauvais') routeKey='paris-beauvais';
+    else if (departParis && arriveeDisney) routeKey='paris-disney';
+    else if (departParis && isParisDepart(arrivee)) routeKey='paris-paris';
+    else if (departOrly && destType==='cdg') routeKey='orly-cdg';
+    else if (departOrly && arriveeDisney) routeKey='orly-disney';
+    else if (departCDG && arriveeDisney) routeKey='cdg-disney';
+
+    if (routeKey && FORFAITS_PARIS[routeKey] && FORFAITS_PARIS[routeKey][vehicule]) {
+      prix = FORFAITS_PARIS[routeKey][vehicule]; isForfait = true;
+      detail = 'Forfait fixe — prix confirmé à la réservation';
+    }
+    if (!isForfait && departVille) {
+      const villeData = FORFAITS_OISE[departVille];
+      let oiseDestKey = null;
+      if (arriveeDisney) oiseDestKey='disney'; else if (destType==='cdg') oiseDestKey='cdg'; else if (destType==='orly') oiseDestKey='orly'; else if (destType==='beauvais') oiseDestKey='beauvais';
+      if (villeData && oiseDestKey && villeData[oiseDestKey] && villeData[oiseDestKey][vehicule]) {
+        prix = villeData[oiseDestKey][vehicule]; isForfait = true;
+        detail = 'Forfait fixe — prix confirmé à la réservation';
+      }
+    }
+    if (!isForfait) {
+      const tarifKm = TARIFS_KM[vehicule];
+      prix = distKm * tarifKm;
+      detail = distKm.toFixed(0) + ' km × ' + tarifKm.toFixed(2) + '€/km';
+      const dept = detectDepartement(depart);
+      const departIDF = dept && IDF_DEPTS.includes(dept);
+      if (!departParis && !departIDF && distApproche > 25) {
+        const kmSupp = distApproche - 25;
+        const supplement = Math.round(kmSupp*0.40*100)/100;
+        prix += supplement;
+        detail += ' + ' + kmSupp.toFixed(0) + ' km d\'approche × 0,40€/km';
+      }
+      prix = Math.round(prix);
+      if (vehicule==='van' && prix<35) { vanIndisponible = true; }
+      else if (vehicule!=='van' && prix<25) { prix=25; detail='Course minimum de 25€ — déplacement inclus.'; }
+    }
+    const attenteVal = document.getElementById('calc-attente').value;
+    const attenteMin = ATTENTE_MINUTES[attenteVal] || 0;
+    if (attenteMin>0 && !vanIndisponible) {
+      const tarifHoraire = ATTENTE_TARIF_HORAIRE[vehicule];
+      const attentePrix = Math.round((attenteMin/60)*tarifHoraire*100)/100;
+      prix += attentePrix;
+      detail += ' + attente ' + document.getElementById('calc-attente').selectedOptions[0].text.split('—')[0].trim() + ' (' + attentePrix.toFixed(2) + '€)';
+    }
+    if (type==='aller-retour' && !vanIndisponible) { prix = Math.round(prix*2*0.95); detail += ' — aller-retour (-5%)'; }
+
+    if (vanIndisponible) {
+      document.getElementById('calc-price').textContent = '—';
+      document.getElementById('calc-detail').textContent = 'Le Van Classe V n\'est pas disponible pour ce trajet (distance trop courte). Choisissez Éco ou Berline, ou contactez-nous.';
+      document.getElementById('resa-section').classList.remove('show');
+    } else {
+      document.getElementById('calc-price').textContent = Math.round(prix) + ' €';
+      document.getElementById('calc-detail').textContent = detail;
+      lastCalc = { depart, arrivee, vehicule, type, prix: Math.round(prix) };
+
+      const departAirportType = detectDestType(depart);
+      const airportMsg = document.getElementById('calc-airport-msg');
+      if (departAirportType === 'cdg' || departAirportType === 'orly' || departAirportType === 'beauvais') {
+        airportMsg.style.display = 'block';
+      } else {
+        airportMsg.style.display = 'none';
+      }
+
+      afficherFormulaire();
+    }
+    document.getElementById('calc-result').classList.add('show');
+    document.getElementById('calc-result').scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+
+  const VEHICULE_LABELS = { 'eco':'Éco','berline':'Berline','van':'Van Classe V' };
+  const TYPE_LABELS = { 'simple':'Aller simple','aller-retour':'Aller-retour' };
+
+  function afficherFormulaire() {
+    if (!lastCalc.prix) return;
+    document.getElementById('rf-depart').textContent = lastCalc.depart;
+    document.getElementById('rf-arrivee').textContent = lastCalc.arrivee;
+    document.getElementById('rf-vehicule').textContent = VEHICULE_LABELS[lastCalc.vehicule];
+    document.getElementById('rf-type').textContent = TYPE_LABELS[lastCalc.type];
+    document.getElementById('rf-prix').textContent = lastCalc.prix + ' €';
+    document.getElementById('resa-section').classList.add('show');
+  }
+
+  function selectPayment(type, el) { document.querySelectorAll('.payment-option').forEach(o=>o.classList.remove('selected')); el.classList.add('selected'); }
+
+  function confirmerReservation() {
+    const nom = document.getElementById('nom').value.trim();
+    const prenom = document.getElementById('prenom').value.trim();
+    const tel = document.getElementById('tel').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const date = document.getElementById('date').value;
+    const heure = document.getElementById('heure').value;
+    if (!nom || !prenom || !tel || !email || !date || !heure) { alert('Veuillez remplir tous les champs obligatoires.'); return; }
+    if (!lastCalc.prix) { alert('Veuillez d\'abord calculer votre trajet.'); return; }
+
+    const paiement = document.querySelector('input[name="paiement"]:checked').value;
+    const reservationData = {
+      nom, prenom, tel, email, date, heure,
+      passagers: document.getElementById('passagers').value,
+      bagages: document.getElementById('bagages').value,
+      vol: document.getElementById('vol').value,
+      message: document.getElementById('message').value,
+      depart: lastCalc.depart, arrivee: lastCalc.arrivee,
+      vehicule: VEHICULE_LABELS[lastCalc.vehicule], type: TYPE_LABELS[lastCalc.type],
+      prix: lastCalc.prix + '€', paiement
+    };
+    const btn = document.getElementById('btn-confirm');
+    btn.disabled = true;
+
+    if (paiement === 'ligne') {
+      btn.textContent = 'Redirection vers le paiement...';
+      sessionStorage.setItem('reservationData', JSON.stringify(reservationData));
+      fetch('/api/create-checkout', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({
+        amount: lastCalc.prix, description: 'Trajet RF Driver : ' + lastCalc.depart + ' → ' + lastCalc.arrivee + ' le ' + date + ' à ' + heure,
+        customerEmail: email, customerName: prenom + ' ' + nom, ...reservationData
+      })})
+      .then(r=>r.json())
+      .then(data => {
+        if (data.url) { window.location.href = data.url; }
+        else { alert('Erreur : ' + (data.error || 'Impossible de créer la session de paiement.')); btn.textContent='Confirmer la réservation'; btn.disabled=false; }
+      })
+      .catch(() => { alert('Erreur de connexion. Veuillez réessayer.'); btn.textContent='Confirmer la réservation'; btn.disabled=false; });
+    } else {
+      btn.textContent = 'Envoi de la demande...';
+      Promise.all([
+        fetch('/api/send-email', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ type:'paiement_bord_client', ...reservationData }) }),
+        fetch('/api/send-email', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ type:'paiement_bord_notification', ...reservationData }) })
+      ])
+      .then(async responses => {
+        const hasError = responses.some(r=>!r.ok);
+        if (hasError) throw new Error('Erreur email');
+        const successDiv = document.createElement('div');
+        successDiv.className = 'success-msg';
+        successDiv.innerHTML = '✅ Votre demande est envoyée. Un email de confirmation vous a été transmis.';
+        document.body.appendChild(successDiv);
+        setTimeout(() => successDiv.remove(), 6000);
+        document.getElementById('resaForm').reset();
+        document.getElementById('resa-section').classList.remove('show');
+        document.getElementById('calc-result').classList.remove('show');
+      })
+      .catch(() => { alert('Impossible d\'envoyer la demande. Appelez-nous au 06 05 71 77 11.'); })
+      .finally(() => { btn.textContent = 'Confirmer la réservation'; btn.disabled = false; });
+    }
+  }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('payment') === 'success') {
+    const savedData = sessionStorage.getItem('reservationData');
+    if (savedData) {
+      sessionStorage.removeItem('reservationData');
+      const successDiv = document.createElement('div');
+      successDiv.className = 'success-msg';
+      successDiv.innerHTML = '✅ Paiement confirmé ! Un email de confirmation vous a été envoyé.';
+      document.body.appendChild(successDiv);
+      setTimeout(() => successDiv.remove(), 6000);
+    }
+  }
+
+  updateAttenteDisplay();
+</script>
+</body>
+</html>

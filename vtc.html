@@ -197,8 +197,6 @@
     .gares-wrap, .bloc-pro-wrap, .doc-wrap { position: relative; display: block; overflow: visible; aspect-ratio: 1200/540; }
     .gares-photo, .bloc-pro-photo, .doc-photo { position: absolute; top: 0; left: 0; width: 100%; aspect-ratio: 1200/540; overflow: hidden; border-radius: 8px; z-index: 0; }
     .gares-photo img, .bloc-pro-photo img, .doc-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    @keyframes photoZoomSlow { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
-    .gares-photo img, .bloc-pro-photo img { animation: photoZoomSlow 16s ease-in-out infinite; }
     .gares-photo .photo-mobile, .bloc-pro-photo .photo-mobile, .doc-photo .photo-mobile { display: none; }
     .gares-photo::after, .bloc-pro-photo::after, .doc-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, #FFFFFF 0%, #FFFFFF 42%, rgba(255,255,255,0.85) 56%, rgba(255,255,255,0) 78%); z-index: 1; }
     .gares-left, .bloc-pro-left, .doc-left { position: relative; z-index: 2; max-width: 480px; padding: 40px 0 40px 40px; min-height: 340px; display: flex; flex-direction: column; justify-content: center; }
@@ -292,8 +290,6 @@
       .gares-photo .photo-mobile, .bloc-pro-photo .photo-mobile, .doc-photo .photo-mobile { display: block; }
       .gares-photo::after, .bloc-pro-photo::after, .doc-photo::after { background: linear-gradient(to top, #FFFFFF 0%, #FFFFFF 30%, rgba(255,255,255,0.88) 48%, rgba(255,255,255,0) 72%); }
       .gares-left, .bloc-pro-left, .doc-left { max-width: 100%; width: 100%; padding: 130px 22px 24px; }
-      @keyframes photoZoomMobile { 0% { transform: scale(1); } 50% { transform: scale(1.04); } 100% { transform: scale(1); } }
-      .gares-photo img, .bloc-pro-photo img { animation: photoZoomMobile 20s ease-in-out infinite; }
       #pro-text-desktop { display: none; }
       #pro-text-mobile { display: block !important; }
 

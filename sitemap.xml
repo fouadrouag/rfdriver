@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://rfdriver.fr/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rfdriver.fr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rfdriver.fr/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rfdriver.fr/" />
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://rfdriver.fr/en/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rfdriver.fr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rfdriver.fr/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rfdriver.fr/" />
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://rfdriver.fr/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rfdriver.fr/services.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rfdriver.fr/en/services.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rfdriver.fr/services.html" />
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rfdriver.fr/en/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rfdriver.fr/services.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rfdriver.fr/en/services.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rfdriver.fr/services.html" />
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://rfdriver.fr/vtc.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rfdriver.fr/vtc.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rfdriver.fr/en/vtc.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rfdriver.fr/vtc.html" />
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rfdriver.fr/en/vtc.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rfdriver.fr/vtc.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rfdriver.fr/en/vtc.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rfdriver.fr/vtc.html" />
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://rfdriver.fr/reservation.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rfdriver.fr/reservation.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rfdriver.fr/en/reservation.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rfdriver.fr/reservation.html" />
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rfdriver.fr/en/reservation.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rfdriver.fr/reservation.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rfdriver.fr/en/reservation.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rfdriver.fr/reservation.html" />
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://rfdriver.fr/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rfdriver.fr/contact.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rfdriver.fr/en/contact.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rfdriver.fr/contact.html" />
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rfdriver.fr/en/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rfdriver.fr/contact.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rfdriver.fr/en/contact.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rfdriver.fr/contact.html" />
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://rfdriver.fr/mentions-legales.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rfdriver.fr/mentions-legales.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rfdriver.fr/en/mentions-legales.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rfdriver.fr/mentions-legales.html" />
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://rfdriver.fr/en/mentions-legales.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rfdriver.fr/mentions-legales.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rfdriver.fr/en/mentions-legales.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rfdriver.fr/mentions-legales.html" />
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://rfdriver.fr/cgv.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rfdriver.fr/cgv.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rfdriver.fr/en/cgv.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rfdriver.fr/cgv.html" />
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://rfdriver.fr/en/cgv.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rfdriver.fr/cgv.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rfdriver.fr/en/cgv.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rfdriver.fr/cgv.html" />
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://rfdriver.fr/politique-confidentialite.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rfdriver.fr/politique-confidentialite.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rfdriver.fr/en/politique-confidentialite.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rfdriver.fr/politique-confidentialite.html" />
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://rfdriver.fr/en/politique-confidentialite.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rfdriver.fr/politique-confidentialite.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rfdriver.fr/en/politique-confidentialite.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rfdriver.fr/politique-confidentialite.html" />
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

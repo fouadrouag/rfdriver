@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RF Driver privacy policy — processing of personal data on rfdriver.fr." />
+  <title>Privacy Policy | RF Driver</title>
+  <link rel="canonical" href="https://rfdriver.fr/en/politique-confidentialite.html" />
+  <link rel="alternate" hreflang="fr" href="https://rfdriver.fr/politique-confidentialite.html" />
+  <link rel="alternate" hreflang="en" href="https://rfdriver.fr/en/politique-confidentialite.html" />
+  <link rel="alternate" hreflang="x-default" href="https://rfdriver.fr/politique-confidentialite.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --gold: #C9A84C; --gold-light: #E2C97E; --bg: #E3E8E9; --bg2: #D6DDE0; --dark: #263238; --dark2: #37474F; --white: #FFFFFF; --border: rgba(38,50,56,0.12); --green: #25D366; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-variant-ligatures: none; -webkit-font-variant-ligatures: none; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { background: var(--bg); color: var(--dark); font-family: 'Raleway', sans-serif; font-weight: 400; overflow-x: hidden; max-width: 100%; }
+    html, body, #footer-placeholder { background: #263238 !important; }
+    img { max-width: 100%; }
+
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 13px 48px; background: rgba(38,50,56,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(201,168,76,0.28); }
+    .logo img { height: 62px; display: block; }
+    nav { display: flex; gap: 32px; }
+    nav a { color: #FFFFFF; text-decoration: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; opacity: 0.75; transition: opacity 0.2s; }
+    nav a:hover, nav a.active { opacity: 1; color: var(--gold); }
+    .header-right { display: flex; align-items: center; gap: 16px; }
+    .header-right-mobile { display: none; align-items: center; gap: 14px; }
+    .flags { display: flex; align-items: center; gap: 6px; }
+    .flags a { font-size: 1.1rem; text-decoration: none; }
+    .btn-call { background: var(--gold); color: #000; padding: 9px 18px; border-radius: 6px; text-decoration: none; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.04em; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 22px; height: 2px; background: #FFF; }
+    .mobile-nav { position: fixed; inset: 0; background: rgba(38,50,56,0.99); z-index: 200; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 26px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { color: #FFF; text-decoration: none; font-size: 1.1rem; font-weight: 600; opacity: 0.85; }
+    .mobile-close { position: absolute; top: 24px; right: 24px; background: none; border: none; color: #FFF; font-size: 1.4rem; cursor: pointer; }
+
+    .hero-simple { padding: 130px 48px 48px; text-align: center; background: var(--white); border-bottom: 1px solid var(--border); }
+    .sec-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); opacity: 0.85; margin-bottom: 10px; }
+    .hero-simple h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 300; line-height: 1.15; margin-bottom: 14px; color: var(--dark); }
+    .hero-simple h1 strong { font-weight: 700; color: var(--gold); }
+    .hero-simple p { font-size: 0.86rem; opacity: 0.6; max-width: 560px; margin: 0 auto; line-height: 1.8; }
+
+    .main { padding: 56px 48px 80px; background: var(--bg); }
+    .wrap { max-width: 820px; margin: 0 auto; }
+    .legal-block { background: var(--white); border-radius: 10px; padding: 40px 44px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .legal-block h2 { font-size: 1.05rem; font-weight: 700; color: var(--dark); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid var(--gold); display: inline-block; }
+    .legal-block p, .legal-block li { font-size: 0.86rem; line-height: 1.85; opacity: 0.78; margin-bottom: 10px; }
+    .legal-block ul { padding-left: 20px; margin-bottom: 10px; }
+    .legal-block a { color: var(--dark); font-weight: 600; }
+    .legal-block strong { color: var(--dark); }
+    .legal-block table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.82rem; }
+    .legal-block th, .legal-block td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); opacity: 0.85; }
+    .legal-block th { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 0.68rem; letter-spacing: 0.06em; }
+    .legal-updated { text-align: center; font-size: 0.72rem; opacity: 0.45; margin-bottom: 32px; }
+    .article-num { color: var(--gold); font-weight: 700; margin-right: 6px; }
+
+    @media(max-width:1023px) {
+      nav, .header-right { display: none; }
+      .header-right-mobile { display: flex; }
+      .hamburger { display: flex; }
+      .hero-simple { padding: 100px 22px 36px; }
+      .main { padding: 36px 22px; }
+      .legal-block { padding: 26px 22px; }
+      .legal-block table { font-size: 0.74rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/en/" class="logo"><img src="/logo.png" alt="RF Driver — Chauffeur Privé Oise" /></a>
+  <nav>
+    <a href="/en/">Home</a>
+    <a href="/en/services.html">Services</a>
+    <a href="/en/vtc.html">Private Chauffeur</a>
+    <a href="/en/reservation.html">Booking</a>
+    <a href="/en/contact.html">Contact</a>
+  </nav>
+  <div class="header-right">
+    <div class="flags">
+      <a href="/politique-confidentialite.html" title="Fran&ccedil;ais" style="opacity:0.4;">&#127467;&#127479;</a>
+      <a href="/en/politique-confidentialite.html" title="English">&#127468;&#127463;</a>
+    </div>
+    <a href="tel:+33605717711" class="btn-call">06 05 71 77 11</a>
+  </div>
+  <div class="header-right-mobile">
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" onclick="toggleMenu()">&#x2715;</button>
+  <a href="/en/" onclick="toggleMenu()">Home</a>
+  <a href="/en/services.html" onclick="toggleMenu()">Services</a>
+  <a href="/en/vtc.html" onclick="toggleMenu()">Private Chauffeur</a>
+  <a href="/en/reservation.html" onclick="toggleMenu()">Booking</a>
+  <a href="/en/contact.html" onclick="toggleMenu()">Contact</a>
+  <a href="tel:+33605717711" style="color:var(--gold);opacity:1;">06 05 71 77 11</a>
+</div>
+
+<div class="hero-simple">
+  <p class="sec-label">Legal Information</p>
+  <h1>Privacy <strong>Policy</strong></h1>
+  <p>This page explains what personal data is collected on rfdriver.fr, why, and how it is used and protected.</p>
+</div>
+
+<div class="main">
+  <div class="wrap">
+    <p class="legal-updated">Last updated: August 2026</p>
+
+    <div class="legal-block">
+      <h2><span class="article-num">1.</span>Data Controller</h2>
+      <p>The data controller for the data collected on rfdriver.fr is Taxi RF (trading as RF Driver), Rue Rosa Bonheur, 60170 Ribécourt-Dreslincourt, France.</p>
+      <p>For any question regarding your personal data, you may contact us at <a href="mailto:contact@rfdriver.fr">contact@rfdriver.fr</a>.</p>
+    </div>
+
+    <div class="legal-block">
+      <h2><span class="article-num">2.</span>Data Collected</h2>
+      <p>The following personal data may be collected via the website, depending on your interactions:</p>
+      <table>
+        <thead><tr><th>Context</th><th>Data collected</th></tr></thead>
+        <tbody>
+          <tr><td>Online booking</td><td>Last name, first name, phone, email, departure/arrival addresses, date, time, number of passengers</td></tr>
+          <tr><td>Online payment</td><td>Processed directly by Stripe — Taxi RF does not collect or store any banking data</td></tr>
+          <tr><td>Contact form</td><td>Name, phone, email, subject of request, message</td></tr>
+          <tr><td>AI assistant</td><td>Content of messages exchanged with the assistant, in order to respond to your request</td></tr>
+          <tr><td>Browsing</td><td>Anonymised audience measurement data (Google Analytics)</td></tr>
+          <tr><td>Journey calculator</td><td>Last departure address saved locally on your device (not transmitted to a server)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="legal-block">
+      <h2><span class="article-num">3.</span>Purposes of Processing</h2>
+      <p>Your data is used exclusively to:</p>
+      <ul>
+        <li>Process and confirm your transport reservations;</li>
+        <li>Contact you regarding the follow-up of your journey or request;</li>
+        <li>Respond to your questions via the contact form or the AI assistant;</li>
+        <li>Issue invoices related to our services;</li>
+        <li>Improve the functioning and usability of the website (anonymised audience measurement).</li>
+      </ul>
+      <p>Your data is never sold, rented or transferred to third parties for commercial purposes.</p>
+    </div>
+
+    <div class="legal-block">
+      <h2><span class="article-num">4.</span>Data Recipients</h2>
+      <p>Your data may be shared with the following technical providers, strictly for the purpose of delivering the service:</p>
+      <ul>
+        <li><strong>Stripe</strong> — online payment processing;</li>
+        <li><strong>Resend</strong> — sending booking confirmation emails;</li>
+        <li><strong>Google (Maps, Analytics)</strong> — route calculation and audience measurement;</li>
+        <li><strong>OpenAI</strong> — operation of the website's conversational assistant;</li>
+        <li><strong>Vercel</strong> — technical hosting of the website.</li>
+      </ul>
+    </div>
+
+    <div class="legal-block">
+      <h2><span class="article-num">5.</span>Data Retention Period</h2>
+      <p>Data related to a reservation is kept for as long as necessary for its processing, then archived in accordance with legal and accounting obligations (up to 10 years for accounting documents). Contact data is kept for 3 years from the last exchange, unless earlier deletion is requested.</p>
+    </div>
+
+    <div class="legal-block">
+      <h2><span class="article-num">6.</span>Your Rights</h2>
+      <p>In accordance with the General Data Protection Regulation (GDPR) and French data protection law, you have the following rights regarding your personal data:</p>
+      <ul>
+        <li>Right of access, rectification and erasure;</li>
+        <li>Right to restriction of processing;</li>
+        <li>Right to data portability;</li>
+        <li>Right to object, on legitimate grounds.</li>
+      </ul>
+      <p>To exercise these rights, contact us at <a href="mailto:contact@rfdriver.fr">contact@rfdriver.fr</a>. You also have the right to lodge a complaint with the French data protection authority, the CNIL (<a href="https://www.cnil.fr" target="_blank">www.cnil.fr</a>).</p>
+    </div>
+
+    <div class="legal-block">
+      <h2><span class="article-num">7.</span>Cookies and Geolocation</h2>
+      <p>The website uses audience measurement cookies (Google Analytics) to analyse website traffic on an anonymised basis.</p>
+      <p>The journey calculator may, with your explicit permission via your browser's popup, use your geographic location to automatically pre-fill the departure address. This address always remains editable and is neither transmitted nor stored on our servers — it is only saved locally on your device (localStorage) to make your next visit easier.</p>
+    </div>
+
+    <div class="legal-block">
+      <h2><span class="article-num">8.</span>Security</h2>
+      <p>Taxi RF implements appropriate technical and organisational measures to protect your data against unauthorised access, loss or disclosure. Online payments are secured by Stripe, in compliance with the PCI-DSS standard.</p>
+    </div>
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script>fetch('/en/footer.html').then(r=>r.text()).then(html=>{document.getElementById('footer-placeholder').innerHTML=html;});</script>
+
+<script>
+  function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}
+</script>
+
+</body>
+</html>
